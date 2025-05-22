@@ -64,11 +64,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				operium: {
-					primary: '#1E88E5',  // primary blue
-					secondary: '#43A047', // green
-					accent: '#FFC107',    // accent yellow
-					light: '#E3F2FD',     // light blue
-					dark: '#0D47A1'       // dark blue
+					primary: '#2563EB',    // Refined blue - more professional
+					secondary: '#10B981',  // Modern green - brighter and more engaging
+					accent: '#F59E0B',     // Warm amber - better contrast
+					light: '#EFF6FF',      // Lighter blue background
+					dark: '#1E40AF',       // Deeper blue for contrast
+					neutral: '#64748B',    // Slate for text and secondary elements
+					muted: '#F8FAFC'       // Very light background for sections
 				}
 			},
 			borderRadius: {

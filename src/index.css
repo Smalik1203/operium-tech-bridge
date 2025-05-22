@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 50% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 210 79% 51%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 122 44% 45%;
+    --secondary: 160 84% 39%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 80% 95%;
+    --accent: 217.2 91.2% 59.8%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 210 79% 51%;
+    --ring: 221 83% 53%;
 
     --radius: 0.5rem;
   }
@@ -42,7 +42,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+    @apply font-semibold text-gray-800;
   }
 
   .section-padding {
@@ -68,7 +68,7 @@
   }
   
   .section-subtitle {
-    @apply text-lg text-gray-600 mb-8 max-w-3xl;
+    @apply text-lg text-operium-neutral mb-8 max-w-3xl;
   }
 
   .card-hover {

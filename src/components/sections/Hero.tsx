@@ -23,12 +23,12 @@ export default function Hero() {
               <div className="inline-flex items-center rounded-full border border-operium-primary/20 bg-operium-light px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-sm font-medium text-operium-primary mb-4 md:mb-6">
                 <span className="animate-pulse mr-1">•</span> Transforming Education
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
                 <span className="relative">
                   Transforming 
                   <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2 sm:h-3 bg-operium-secondary/20 -rotate-1"></span>
                 </span>
-                <br />Education Through 
+                <br className="hidden xs:block" />Education Through 
                 <span className="text-operium-primary">Innovation</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed max-w-xl">
@@ -57,7 +57,8 @@ export default function Hero() {
             </div>
           </div>
           
-          <div className="hidden md:block relative animate-fade-in">
+          {/* Tablet and Desktop Hero Image */}
+          <div className="hidden sm:block relative animate-fade-in">
             <div className="relative">
               {/* Background decorative elements */}
               <div className="absolute -top-12 -left-12 w-40 h-40 bg-operium-secondary/20 rounded-full z-0"></div>
@@ -69,11 +70,11 @@ export default function Hero() {
                 <img 
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                   alt="Digital learning" 
-                  className="rounded-lg object-cover h-auto md:h-80 lg:h-96 w-full"
+                  className="rounded-lg object-cover h-auto sm:h-60 md:h-80 lg:h-96 w-full"
                 />
               </div>
               
-              {/* Floating feature cards - hidden on small screens, visible on medium and up */}
+              {/* Floating feature cards - optimized for tablet */}
               <div className="absolute -bottom-10 -left-10 bg-white p-3 md:p-4 rounded-xl shadow-lg z-20 max-w-[160px] md:max-w-xs transform hover:-translate-y-1 transition-transform">
                 <div className="flex items-center">
                   <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full bg-operium-light text-operium-primary mr-2 md:mr-3">
@@ -101,7 +102,7 @@ export default function Hero() {
           </div>
           
           {/* Mobile hero image - only visible on small screens */}
-          <div className="md:hidden relative mx-auto max-w-[80%] mt-6">
+          <div className="sm:hidden relative mx-auto max-w-[80%] mt-6">
             <div className="relative z-10 rounded-xl overflow-hidden shadow-lg shadow-operium-primary/20 border-4 border-white">
               <img 
                 src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"

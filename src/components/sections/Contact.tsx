@@ -17,9 +17,9 @@ export default function Contact() {
     <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="section-title">Get in Touch</h2>
+          <h2 className="section-title">Connect With Us</h2>
           <p className="section-subtitle">
-            Have questions about our solutions? Contact us and our team will get back to you as soon as possible.
+            Have questions about our innovative solutions? Reach out to our expert team for personalized guidance tailored to your institution's needs.
           </p>
         </div>
         

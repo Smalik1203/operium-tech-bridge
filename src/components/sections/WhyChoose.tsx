@@ -9,7 +9,7 @@ export default function WhyChoose() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="section-title">Why Choose Operium</h2>
           <p className="section-subtitle">
-            Our unique approach combines innovative technology with educational expertise to provide comprehensive solutions for schools.
+            Our unique approach combines cutting-edge technology with educational expertise to provide comprehensive solutions for institutions of all sizes.
           </p>
         </div>
         
@@ -22,7 +22,7 @@ export default function WhyChoose() {
             </div>
             <h3 className="text-xl font-semibold mb-3">Complete Ecosystem</h3>
             <p className="text-gray-600">
-              An integrated suite of academic and technology solutions that work seamlessly together, from software to content to hardware.
+              An integrated suite of academic and technology solutions working seamlessly together, from advanced software to premium content to state-of-the-art hardware.
             </p>
           </div>
           
@@ -34,7 +34,7 @@ export default function WhyChoose() {
             </div>
             <h3 className="text-xl font-semibold mb-3">Mobile-First Approach</h3>
             <p className="text-gray-600">
-              Built for the mobile era, our solutions ensure accessibility and convenience for administrators, teachers, students, and parents.
+              Built for the digital era, our solutions ensure seamless accessibility and convenience for administrators, educators, students, and parents alike.
             </p>
           </div>
           
@@ -44,9 +44,9 @@ export default function WhyChoose() {
                 <School className="text-operium-accent h-6 w-6" />
               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-3">Scalable for All Schools</h3>
+            <h3 className="text-xl font-semibold mb-3">Adaptable Solutions</h3>
             <p className="text-gray-600">
-              Whether you're a small school or a large educational institution, our platform scales to meet your specific needs and requirements.
+              Whether you're a small learning center or a large educational institution, our platform scales and adapts to meet your specific needs and objectives.
             </p>
           </div>
           
@@ -56,9 +56,9 @@ export default function WhyChoose() {
                 <Users className="text-operium-dark h-6 w-6" />
               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-3">Dedicated Support</h3>
+            <h3 className="text-xl font-semibold mb-3">Expert Support</h3>
             <p className="text-gray-600">
-              Our committed team ensures smooth implementation and provides ongoing support to help schools maximize the potential of our solutions.
+              Our specialized team ensures seamless implementation and provides ongoing support to help institutions maximize the potential of our innovative solutions.
             </p>
           </div>
         </div>

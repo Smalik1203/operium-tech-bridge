@@ -10,14 +10,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              Bridging Learning with Technology
+              Transforming Education Through Innovation
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              Empowering schools with smart academic solutions through an integrated ecosystem of digital tools and content.
+              Empowering educational institutions with cutting-edge digital solutions that enhance teaching, learning, and administrative efficiency.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button className="bg-operium-primary hover:bg-operium-dark text-white px-6 py-6">
-                Explore ClassBridge
+                Discover Our Ecosystem
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button variant="outline" className="border-operium-primary text-operium-primary hover:bg-operium-primary hover:text-white px-6 py-6">

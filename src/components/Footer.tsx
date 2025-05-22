@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Operium Technologies</h3>
-            <p className="mb-4">Empowering schools through digital transformation with innovative education technology solutions.</p>
+            <p className="mb-4">Pioneering digital transformation for educational institutions with innovative technology solutions that drive excellence and efficiency.</p>
           </div>
           
           <div>

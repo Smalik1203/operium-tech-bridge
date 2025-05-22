@@ -8,7 +8,7 @@ export default function About() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="section-title">About Operium Technologies</h2>
           <p className="section-subtitle">
-            Transforming education through innovative technology solutions designed for modern schools.
+            Revolutionizing education through innovative technology solutions designed for modern educational institutions.
           </p>
         </div>
         
@@ -25,14 +25,14 @@ export default function About() {
             <div className="mb-8">
               <h3 className="text-2xl font-bold mb-3 text-operium-primary">Our Mission</h3>
               <p className="text-gray-600">
-                To create a seamless educational ecosystem that combines technology and content, empowering schools to deliver high-quality education efficiently and effectively.
+                To create a seamless educational ecosystem that integrates advanced technology with premium content, enabling educational institutions of all types to deliver exceptional learning experiences efficiently.
               </p>
             </div>
             
             <div className="mb-8">
               <h3 className="text-2xl font-bold mb-3 text-operium-primary">Our Vision</h3>
               <p className="text-gray-600">
-                To become the leading provider of integrated academic and technological solutions for schools across the country, setting new standards in educational excellence.
+                To become the leading provider of integrated academic and technological solutions for educational institutions globally, setting new standards in educational excellence and digital innovation.
               </p>
             </div>
             
@@ -43,7 +43,7 @@ export default function About() {
                   <div className="bg-operium-light p-1 rounded mr-2">
                     <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
                   </div>
-                  <span><strong>Innovation:</strong> Constantly evolving our solutions to meet changing educational needs</span>
+                  <span><strong>Innovation:</strong> Continuously evolving our solutions to meet changing educational demands</span>
                 </li>
                 <li className="flex items-center">
                   <div className="bg-operium-light p-1 rounded mr-2">
@@ -61,7 +61,7 @@ export default function About() {
                   <div className="bg-operium-light p-1 rounded mr-2">
                     <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
                   </div>
-                  <span><strong>Integrity:</strong> Building relationships based on trust and transparency</span>
+                  <span><strong>Integrity:</strong> Building relationships based on trust, transparency and reliability</span>
                 </li>
               </ul>
             </div>

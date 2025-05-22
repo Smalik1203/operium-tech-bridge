@@ -133,31 +133,13 @@ export default function Contact() {
                     <h4 className="font-semibold text-gray-800">Address</h4>
                     <address className="not-italic text-gray-600">
                       Operium Technologies Pvt Ltd<br />
-                      123 Business Park,<br />
-                      Tech Hub, Bengaluru - 560001<br />
-                      India
+                      Prajay Princeton Towers, 1017, 10th floor,<br />
+                      Doctors Colony, Saroornagar, Hyderabad,<br />
+                      Telangana 500035
                     </address>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-operium-accent">
-              <h3 className="text-xl font-bold mb-4 text-operium-primary">Business Hours</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>10:00 AM - 2:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span>Closed</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

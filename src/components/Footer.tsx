@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,6 +12,14 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Operium Technologies</h3>
             <p className="mb-4">Pioneering digital transformation for educational institutions with innovative technology solutions that drive excellence and efficiency.</p>
+            <div className="flex items-start mt-4">
+              <MapPin className="text-operium-primary h-5 w-5 mt-1 mr-2 flex-shrink-0" />
+              <address className="not-italic text-gray-400 text-sm">
+                Prajay Princeton Towers, 1017, 10th floor,<br />
+                Doctors Colony, Saroornagar, Hyderabad,<br />
+                Telangana 500035
+              </address>
+            </div>
           </div>
           
           <div>

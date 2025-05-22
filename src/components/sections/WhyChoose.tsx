@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CircleCheck, Laptop, School, Users } from "lucide-react";
+import { CircleCheck, Laptop, School, Users, Smartphone } from "lucide-react";
 
 export default function WhyChoose() {
   return (

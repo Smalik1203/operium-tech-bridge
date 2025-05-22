@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-gray-300">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -39,14 +39,19 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-operium-primary" />
-                <a href="mailto:info@operiumtech.com" className="hover:text-operium-primary transition-colors">
-                  info@operiumtech.com
+                <a href="mailto:contact@operium.in" className="hover:text-operium-primary transition-colors">
+                  contact@operium.in
                 </a>
               </div>
               <div className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-operium-primary" />
-                <a href="tel:+919876543210" className="hover:text-operium-primary transition-colors">
-                  +91 9876543210
+                <a href="tel:+919391906310" className="hover:text-operium-primary transition-colors">
+                  +91 9391906310
+                </a>
+              </div>
+              <div className="flex items-center pl-7">
+                <a href="tel:+919391906311" className="hover:text-operium-primary transition-colors">
+                  +91 9391906311
                 </a>
               </div>
             </div>

@@ -14,7 +14,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gray-50">
+    <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="section-title">Get in Touch</h2>
@@ -24,7 +24,7 @@ export default function Contact() {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-xl shadow-md p-8">
+          <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-operium-primary">
             <h3 className="text-2xl font-bold mb-6 text-operium-primary">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -91,7 +91,7 @@ export default function Contact() {
               
               <Button 
                 type="submit" 
-                className="w-full bg-operium-primary hover:bg-operium-dark text-white"
+                className="w-full bg-gradient-to-r from-operium-primary to-operium-dark hover:from-operium-dark hover:to-operium-primary text-white"
               >
                 Submit Inquiry
               </Button>
@@ -99,16 +99,16 @@ export default function Contact() {
           </div>
           
           <div>
-            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-operium-primary">Contact Information</h3>
+            <div className="bg-white rounded-xl shadow-md p-8 mb-8 border-t-4 border-operium-secondary">
+              <h3 className="text-2xl font-bold mb-6 text-operium-secondary">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
                   <Mail className="text-operium-primary h-6 w-6 mt-1 mr-4" />
                   <div>
                     <h4 className="font-semibold text-gray-800">Email</h4>
-                    <a href="mailto:info@operiumtech.com" className="text-operium-primary hover:underline">
-                      info@operiumtech.com
+                    <a href="mailto:contact@operium.in" className="text-operium-primary hover:underline">
+                      contact@operium.in
                     </a>
                   </div>
                 </div>
@@ -117,8 +117,12 @@ export default function Contact() {
                   <Phone className="text-operium-primary h-6 w-6 mt-1 mr-4" />
                   <div>
                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                    <a href="tel:+919876543210" className="text-operium-primary hover:underline">
-                      +91 9876543210
+                    <a href="tel:+919391906310" className="text-operium-primary hover:underline">
+                      +91 9391906310
+                    </a>
+                    <br />
+                    <a href="tel:+919391906311" className="text-operium-primary hover:underline">
+                      +91 9391906311
                     </a>
                   </div>
                 </div>
@@ -138,7 +142,7 @@ export default function Contact() {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md p-8">
+            <div className="bg-white rounded-xl shadow-md p-8 border-l-4 border-operium-accent">
               <h3 className="text-xl font-bold mb-4 text-operium-primary">Business Hours</h3>
               <ul className="space-y-2 text-gray-600">
                 <li className="flex justify-between">

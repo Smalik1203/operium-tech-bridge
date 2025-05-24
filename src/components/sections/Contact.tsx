@@ -1,16 +1,79 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    school: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted');
-    // You could add toast notification here in the future
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('inquiries')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            school: formData.school || null,
+            subject: formData.subject,
+            message: formData.message
+          }
+        ]);
+
+      if (error) {
+        console.error('Error submitting inquiry:', error);
+        toast({
+          title: "Error",
+          description: "There was an error submitting your inquiry. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Success!",
+          description: "Your inquiry has been submitted successfully. We'll get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          school: '',
+          subject: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -34,6 +97,8 @@ export default function Contact() {
                   </label>
                   <Input 
                     id="name" 
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="John Smith" 
                     required 
                     className="w-full"
@@ -46,6 +111,8 @@ export default function Contact() {
                   <Input 
                     id="email" 
                     type="email" 
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="john@example.com" 
                     required 
                     className="w-full"
@@ -59,6 +126,8 @@ export default function Contact() {
                 </label>
                 <Input 
                   id="school" 
+                  value={formData.school}
+                  onChange={handleInputChange}
                   placeholder="Your School Name" 
                   className="w-full"
                 />
@@ -70,6 +139,8 @@ export default function Contact() {
                 </label>
                 <Input 
                   id="subject" 
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   placeholder="How can we help?" 
                   required 
                   className="w-full"
@@ -82,6 +153,8 @@ export default function Contact() {
                 </label>
                 <Textarea 
                   id="message" 
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Tell us more about your requirements..." 
                   rows={5} 
                   required 
@@ -91,9 +164,10 @@ export default function Contact() {
               
               <Button 
                 type="submit" 
+                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-operium-primary to-operium-dark hover:from-operium-dark hover:to-operium-primary text-white"
               >
-                Submit Inquiry
+                {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
               </Button>
             </form>
           </div>

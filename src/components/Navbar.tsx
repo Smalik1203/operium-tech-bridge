@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -12,7 +11,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <a href="#" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/00d968f9-cdb5-43c9-98f6-deba0db6e27c.png" 
+              src="/lovable-uploads/634f0105-bef5-4c98-9a8b-04367098d074.png" 
               alt="Operium Technologies Logo" 
               className="h-10 w-10"
             />

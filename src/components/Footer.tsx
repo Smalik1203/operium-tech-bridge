@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Globe, ChevronRight } from "lucide-react";
 
@@ -19,11 +18,6 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <div className="flex items-center space-x-3 mb-2">
-                <img 
-                  src="/lovable-uploads/00d968f9-cdb5-43c9-98f6-deba0db6e27c.png" 
-                  alt="Operium Technologies Logo" 
-                  className="h-8 w-8 filter brightness-0 invert"
-                />
                 <h3 className="text-2xl font-bold text-white">Operium Technologies</h3>
               </div>
               <div className="h-1 w-16 bg-operium-primary rounded"></div>
@@ -142,7 +136,6 @@ export default function Footer() {
               <a href="#" className="h-9 w-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-operium-primary transition-colors">
                 <Globe className="h-4 w-4" />
               </a>
-              {/* Add more social icons as needed */}
             </div>
           </div>
         </div>

@@ -18,7 +18,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-2">Operium Technologies</h3>
+              <div className="flex items-center space-x-3 mb-2">
+                <img 
+                  src="/lovable-uploads/00d968f9-cdb5-43c9-98f6-deba0db6e27c.png" 
+                  alt="Operium Technologies Logo" 
+                  className="h-8 w-8 filter brightness-0 invert"
+                />
+                <h3 className="text-2xl font-bold text-white">Operium Technologies</h3>
+              </div>
               <div className="h-1 w-16 bg-operium-primary rounded"></div>
             </div>
             <p className="mb-4 text-gray-400 leading-relaxed">

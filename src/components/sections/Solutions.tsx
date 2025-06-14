@@ -2,6 +2,7 @@
 import React from 'react';
 import { Book, Laptop, Monitor, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function Solutions() {
   return (
@@ -52,7 +53,9 @@ export default function Solutions() {
                   <span className="text-gray-600">Comprehensive Progress Tracking Analytics</span>
                 </li>
               </ul>
-              <Button className="bg-operium-primary hover:bg-operium-dark text-white">Learn More</Button>
+              <Link to="/coming-soon">
+                <Button className="bg-operium-primary hover:bg-operium-dark text-white">Learn More</Button>
+              </Link>
             </div>
           </div>
           
@@ -93,7 +96,9 @@ export default function Solutions() {
                   <span className="text-gray-600">Personalized Learning Pathways</span>
                 </li>
               </ul>
-              <Button className="bg-operium-primary hover:bg-operium-dark text-white">Explore Content</Button>
+              <Link to="/coming-soon">
+                <Button className="bg-operium-primary hover:bg-operium-dark text-white">Explore Content</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -136,7 +141,9 @@ export default function Solutions() {
                   <span className="text-gray-600">Enriching Supplementary Materials</span>
                 </li>
               </ul>
-              <Button className="bg-operium-primary hover:bg-operium-dark text-white">View Books</Button>
+              <Link to="/coming-soon">
+                <Button className="bg-operium-primary hover:bg-operium-dark text-white">View Books</Button>
+              </Link>
             </div>
           </div>
           
@@ -177,7 +184,9 @@ export default function Solutions() {
                   <span className="text-gray-600">Seamless ClassBridge Integration</span>
                 </li>
               </ul>
-              <Button className="bg-operium-primary hover:bg-operium-dark text-white">Discover IFP</Button>
+              <Link to="/coming-soon">
+                <Button className="bg-operium-primary hover:bg-operium-dark text-white">Discover IFP</Button>
+              </Link>
             </div>
           </div>
         </div>

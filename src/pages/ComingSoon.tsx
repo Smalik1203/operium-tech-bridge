@@ -69,16 +69,16 @@ export default function ComingSoon() {
             </div>
 
             {/* Coming Soon title */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-800 mb-4 sm:mb-6 animate-slide-in leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-800 mb-4 sm:mb-6 animate-slide-in leading-tight font-playfair">
               Coming <span className="text-operium-primary">Soon</span>
             </h1>
 
             {/* Inspiring quote */}
             <div className="mb-8 sm:mb-12 animate-fade-in delay-300 px-2">
-              <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-operium-neutral italic font-light leading-relaxed mb-3 sm:mb-4">
+              <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-operium-neutral italic font-light leading-relaxed mb-3 sm:mb-4 font-crimson">
                 "The future belongs to those who believe in the beauty of their dreams."
               </blockquote>
-              <cite className="text-operium-primary font-semibold text-sm sm:text-base lg:text-lg">
+              <cite className="text-operium-primary font-semibold text-sm sm:text-base lg:text-lg font-playfair">
                 — Eleanor Roosevelt
               </cite>
             </div>

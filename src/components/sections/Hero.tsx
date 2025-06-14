@@ -4,6 +4,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
 export default function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleGetInTouch = () => {
+    scrollToSection('contact');
+  };
+
+  const handleDiscoverEcosystem = () => {
+    scrollToSection('solutions');
+  };
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-operium-light to-operium-light/40 pt-16 pb-20 md:pt-24 md:pb-32">
       {/* Decorative elements */}
@@ -23,7 +38,7 @@ export default function Hero() {
               <div className="inline-flex items-center rounded-full border border-operium-primary/20 bg-operium-light px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-sm font-medium text-operium-primary mb-4 md:mb-6">
                 <span className="animate-pulse mr-1">•</span> Transforming Education
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight font-playfair">
                 <span className="relative">
                   Transforming 
                   <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2 sm:h-3 bg-operium-secondary/20 -rotate-1"></span>
@@ -36,24 +51,20 @@ export default function Hero() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 sm:gap-5">
-              <Button className="group bg-operium-primary hover:bg-operium-dark text-white px-4 sm:px-6 py-5 sm:py-6 rounded-xl shadow-lg shadow-operium-primary/20 transition-all hover:shadow-xl hover:shadow-operium-primary/30 text-sm sm:text-base">
+              <Button 
+                onClick={handleDiscoverEcosystem}
+                className="group bg-operium-primary hover:bg-operium-dark text-white px-4 sm:px-6 py-5 sm:py-6 rounded-xl shadow-lg shadow-operium-primary/20 transition-all hover:shadow-xl hover:shadow-operium-primary/30 text-sm sm:text-base"
+              >
                 Discover Our Ecosystem
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="border-operium-primary border-2 text-operium-primary hover:bg-operium-primary hover:text-white px-4 sm:px-6 py-5 sm:py-6 rounded-xl transition-all text-sm sm:text-base">
+              <Button 
+                onClick={handleGetInTouch}
+                variant="outline" 
+                className="border-operium-primary border-2 text-operium-primary hover:bg-operium-primary hover:text-white px-4 sm:px-6 py-5 sm:py-6 rounded-xl transition-all text-sm sm:text-base"
+              >
                 Get in Touch
               </Button>
-            </div>
-            
-            <div className="flex items-center space-x-3 md:space-x-4 pt-2 md:pt-4 text-xs sm:text-sm">
-              <div className="flex -space-x-2">
-                <img src="https://i.pravatar.cc/100?img=1" className="h-6 w-6 sm:h-8 sm:w-8 rounded-full border-2 border-white" alt="Customer" />
-                <img src="https://i.pravatar.cc/100?img=2" className="h-6 w-6 sm:h-8 sm:w-8 rounded-full border-2 border-white" alt="Customer" />
-                <img src="https://i.pravatar.cc/100?img=3" className="h-6 w-6 sm:h-8 sm:w-8 rounded-full border-2 border-white" alt="Customer" />
-              </div>
-              <div className="text-operium-neutral">
-                Trusted by <span className="font-bold">200+</span> educational institutions
-              </div>
             </div>
           </div>
           

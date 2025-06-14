@@ -20,7 +20,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-operium-light to-operium-light/40 pt-16 pb-20 md:pt-24 md:pb-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-operium-light to-operium-light/40 pt-20 pb-24 md:pt-28 md:pb-36">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-operium-primary/10 rounded-full blur-3xl"></div>
@@ -32,28 +32,30 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#2563EB 1px, transparent 0)', backgroundSize: '30px 30px' }}></div>
       
       <div className="container mx-auto px-4 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="animate-fade-in space-y-6 md:space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Text Content */}
+          <div className="animate-fade-in space-y-6 md:space-y-8 order-2 lg:order-1">
             <div>
               <div className="inline-flex items-center rounded-full border border-operium-primary/20 bg-operium-light px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-sm font-medium text-operium-primary mb-4 md:mb-6">
                 <span className="animate-pulse mr-1">•</span> Transforming Education
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight font-inter">
-                <span className="relative">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight font-inter">
+                <span className="relative inline-block">
                   Transforming 
                   <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2 sm:h-3 bg-operium-secondary/20 -rotate-1"></span>
                 </span>
-                <br className="hidden xs:block" />Education Through 
-                <span className="text-operium-primary">Innovation</span>
+                <br />
+                <span className="block mt-2">Education Through</span>
+                <span className="text-operium-primary block mt-2">Innovation</span>
               </h1>
-              <p className="text-lg md:text-xl text-operium-neutral mb-6 md:mb-8 leading-relaxed max-w-xl">
+              <p className="text-base md:text-lg lg:text-xl text-operium-neutral mb-6 md:mb-8 leading-relaxed max-w-2xl">
                 Empowering educational institutions with cutting-edge digital solutions that enhance teaching, learning, and administrative efficiency.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 sm:gap-5">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={handleDiscoverEcosystem}
-                className="group bg-operium-primary hover:bg-operium-dark text-white px-4 sm:px-6 py-5 sm:py-6 rounded-xl shadow-lg shadow-operium-primary/20 transition-all hover:shadow-xl hover:shadow-operium-primary/30 text-sm sm:text-base"
+                className="group bg-operium-primary hover:bg-operium-dark text-white px-6 py-6 rounded-xl shadow-lg shadow-operium-primary/20 transition-all hover:shadow-xl hover:shadow-operium-primary/30 text-base w-full sm:w-auto"
               >
                 Discover Our Ecosystem
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -61,67 +63,55 @@ export default function Hero() {
               <Button 
                 onClick={handleGetInTouch}
                 variant="outline" 
-                className="border-operium-primary border-2 text-operium-primary hover:bg-operium-primary hover:text-white px-4 sm:px-6 py-5 sm:py-6 rounded-xl transition-all text-sm sm:text-base"
+                className="border-operium-primary border-2 text-operium-primary hover:bg-operium-primary hover:text-white px-6 py-6 rounded-xl transition-all text-base w-full sm:w-auto"
               >
                 Get in Touch
               </Button>
             </div>
           </div>
           
-          {/* Tablet and Desktop Hero Image */}
-          <div className="hidden sm:block relative animate-fade-in">
-            <div className="relative">
+          {/* Image Content */}
+          <div className="relative animate-fade-in order-1 lg:order-2">
+            <div className="relative max-w-lg mx-auto lg:max-w-none">
               {/* Background decorative elements */}
-              <div className="absolute -top-12 -left-12 w-40 h-40 bg-operium-secondary/20 rounded-full z-0"></div>
-              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-operium-primary/30 rounded-full z-0"></div>
-              <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-operium-accent/40 rounded-full z-0"></div>
+              <div className="absolute -top-8 -left-8 w-32 h-32 bg-operium-secondary/20 rounded-full z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-operium-primary/30 rounded-full z-0"></div>
+              <div className="absolute top-1/3 right-0 transform translate-x-1/2 w-12 h-12 bg-operium-accent/40 rounded-full z-0"></div>
               
               {/* Main image with stylish frame */}
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-operium-primary/20 border-8 border-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-operium-primary/20 border-4 border-white transform hover:rotate-1 transition-transform duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                   alt="Digital learning" 
-                  className="rounded-lg object-cover h-auto sm:h-60 md:h-80 lg:h-96 w-full"
+                  className="rounded-lg object-cover w-full h-64 sm:h-80 md:h-96"
                 />
               </div>
               
-              {/* Floating feature cards - optimized for tablet */}
-              <div className="absolute -bottom-10 -left-10 bg-white p-3 md:p-4 rounded-xl shadow-lg z-20 max-w-[160px] md:max-w-xs transform hover:-translate-y-1 transition-transform">
+              {/* Floating feature cards */}
+              <div className="absolute -bottom-8 -left-8 bg-white p-3 rounded-xl shadow-lg z-20 max-w-[140px] sm:max-w-[160px] transform hover:-translate-y-1 transition-transform">
                 <div className="flex items-center">
-                  <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full bg-operium-light text-operium-primary mr-2 md:mr-3">
-                    <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
+                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-operium-light text-operium-primary mr-2">
+                    <ChevronRight className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm md:text-base text-gray-900">Mobile-First</h3>
-                    <p className="text-xs md:text-sm text-operium-neutral">Accessible anywhere</p>
+                    <h3 className="font-bold text-xs sm:text-sm text-gray-900">Mobile-First</h3>
+                    <p className="text-xs text-operium-neutral">Accessible anywhere</p>
                   </div>
                 </div>
               </div>
               
-              <div className="absolute -top-8 right-10 bg-white p-3 md:p-4 rounded-xl shadow-lg z-20 max-w-[160px] md:max-w-xs transform hover:-translate-y-1 transition-transform">
+              <div className="absolute -top-6 right-8 bg-white p-3 rounded-xl shadow-lg z-20 max-w-[140px] sm:max-w-[180px] transform hover:-translate-y-1 transition-transform">
                 <div className="flex items-center">
-                  <div className="flex items-center justify-center h-8 w-8 md:h-10 md:w-10 rounded-full bg-operium-light text-operium-primary mr-2 md:mr-3">
-                    <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
+                  <div className="flex items-center justify-center h-8 w-8 rounded-full bg-operium-light text-operium-primary mr-2">
+                    <ChevronRight className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm md:text-base text-gray-900">Complete Solutions</h3>
-                    <p className="text-xs md:text-sm text-operium-neutral">End-to-end integration</p>
+                    <h3 className="font-bold text-xs sm:text-sm text-gray-900">Complete Solutions</h3>
+                    <p className="text-xs text-operium-neutral">End-to-end integration</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          {/* Mobile hero image - only visible on small screens */}
-          <div className="sm:hidden relative mx-auto max-w-[80%] mt-6">
-            <div className="relative z-10 rounded-xl overflow-hidden shadow-lg shadow-operium-primary/20 border-4 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Digital learning" 
-                className="rounded-lg object-cover w-full"
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-operium-secondary/20 rounded-full z-0"></div>
           </div>
         </div>
       </div>

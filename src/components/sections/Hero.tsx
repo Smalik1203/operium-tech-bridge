@@ -38,7 +38,7 @@ export default function Hero() {
               <div className="inline-flex items-center rounded-full border border-operium-primary/20 bg-operium-light px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-sm font-medium text-operium-primary mb-4 md:mb-6">
                 <span className="animate-pulse mr-1">•</span> Transforming Education
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight font-playfair">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight font-inter">
                 <span className="relative">
                   Transforming 
                   <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2 sm:h-3 bg-operium-secondary/20 -rotate-1"></span>

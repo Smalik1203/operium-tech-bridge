@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <span className="font-bold text-xl md:text-2xl text-operium-primary font-playfair">
+            <span className="font-bold text-xl md:text-2xl text-operium-primary font-inter">
               Operium<span className="text-operium-secondary">Technologies</span>
             </span>
           </Link>

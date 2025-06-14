@@ -1,11 +1,40 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { ArrowLeft, Sparkles, Clock, Bell } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
+import { useToast } from "@/hooks/use-toast";
 
 export default function ComingSoon() {
   const navigate = useNavigate();
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNotifyMe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Simulate API call for now
+    setTimeout(() => {
+      toast({
+        title: "Success!",
+        description: "You'll be notified when we launch. Thank you for your interest!",
+      });
+      setEmail('');
+      setIsSubmitting(false);
+    }, 1000);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-operium-light via-white to-operium-muted flex items-center justify-center relative overflow-hidden">
@@ -67,16 +96,23 @@ export default function ComingSoon() {
                   <h3 className="text-lg font-semibold text-gray-800">Get Notified</h3>
                 </div>
                 <p className="text-gray-600 mb-4">Be the first to know when we launch!</p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
+                <form onSubmit={handleNotifyMe} className="flex flex-col sm:flex-row gap-3">
+                  <Input
                     type="email"
                     placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-operium-primary focus:border-transparent"
+                    required
                   />
-                  <Button className="bg-operium-primary hover:bg-operium-dark text-white px-6 py-3">
-                    Notify Me
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-operium-primary hover:bg-operium-dark text-white px-6 py-3"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Notify Me'}
                   </Button>
-                </div>
+                </form>
               </div>
             </div>
 

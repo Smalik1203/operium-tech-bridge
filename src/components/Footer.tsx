@@ -1,8 +1,17 @@
+
 import React from 'react';
 import { Mail, Phone, MapPin, Globe, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 relative">
@@ -42,28 +51,28 @@ export default function Footer() {
             </div>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <Link to="/" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('about')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>About Us</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#solutions" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('solutions')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>Our Solutions</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#why-choose" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('why-choose')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>Why Choose Us</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -75,28 +84,28 @@ export default function Footer() {
             </div>
             <ul className="space-y-3">
               <li>
-                <a href="#classbridge" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('classbridge')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>ClassBridge</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#academic-content" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('academic-content')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>Academic Content</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#books" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('books')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>Printed Books</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#ifp" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                <button onClick={() => scrollToSection('ifp')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>IFP Solutions</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -133,7 +142,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="mb-4 md:mb-0">&copy; {currentYear} Operium Technologies Pvt Ltd. All rights reserved.</p>
             <div className="flex space-x-4">
-              <a href="#" className="h-9 w-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-operium-primary transition-colors">
+              <a href="https://operium.in" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-operium-primary transition-colors">
                 <Globe className="h-4 w-4" />
               </a>
             </div>

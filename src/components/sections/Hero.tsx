@@ -81,8 +81,8 @@ export default function Hero() {
               {/* Main image with stylish frame */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-operium-primary/20 border-4 border-white transform hover:rotate-1 transition-transform duration-500">
                 <img 
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Digital learning technology by Operium Technologies - Interactive classroom with students and teacher using advanced educational technology" 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Modern educational technology - Students using digital devices and interactive learning tools in classroom" 
                   className="rounded-lg object-cover w-full h-64 sm:h-80 md:h-96"
                 />
               </div>

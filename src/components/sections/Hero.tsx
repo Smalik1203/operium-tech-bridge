@@ -37,7 +37,7 @@ export default function Hero() {
           <div className="animate-fade-in space-y-6 md:space-y-8 order-2 lg:order-1">
             <div>
               <div className="inline-flex items-center rounded-full border border-operium-primary/20 bg-operium-light px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-sm font-medium text-operium-primary mb-4 md:mb-6">
-                <span className="animate-pulse mr-1">•</span> Leading EdTech Company in India
+                <span className="animate-pulse mr-1">•</span> EdTech Solutions for India
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight font-inter">
                 <span className="relative inline-block">
@@ -49,7 +49,7 @@ export default function Hero() {
                 <span className="text-operium-primary block mt-2">Digital Innovation</span>
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-operium-neutral mb-6 md:mb-8 leading-relaxed max-w-2xl">
-                Operium Technologies Pvt Ltd empowers educational institutions across India with cutting-edge digital solutions including ClassBridge platform and Interactive Flat Panels for enhanced teaching and learning experiences.
+                Operium Technologies Pvt Ltd empowers educational institutions across India with innovative digital solutions including ClassBridge platform and Interactive Flat Panels for enhanced teaching and learning experiences.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">

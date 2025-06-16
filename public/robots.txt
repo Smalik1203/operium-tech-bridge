@@ -1,3 +1,8 @@
+
+User-agent: *
+Allow: /
+
+# Specific bot permissions
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +15,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location (you may want to add this later)
+# Sitemap: https://operium.in/sitemap.xml
+
+# Crawl-delay for general bots
+Crawl-delay: 1

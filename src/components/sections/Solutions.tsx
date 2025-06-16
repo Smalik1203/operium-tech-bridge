@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Book, Laptop, Monitor, Smartphone } from "lucide-react";
+import { Monitor, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -11,11 +11,11 @@ export default function Solutions() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="section-title">Our Solutions</h2>
           <p className="section-subtitle">
-            Operium offers a comprehensive suite of educational products and services designed to transform teaching and learning experiences across all types of educational institutions.
+            Operium offers comprehensive educational technology solutions designed to transform teaching and learning experiences across all types of educational institutions.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div id="classbridge" className="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <div className="p-8">
               <div className="flex items-center mb-4">
@@ -25,7 +25,7 @@ export default function Solutions() {
                 <h3 className="text-2xl font-bold">ClassBridge</h3>
               </div>
               <p className="text-gray-600 mb-6">
-                A revolutionary mobile-first SaaS platform that streamlines operations, enhances communication, and delivers academic content seamlessly. ClassBridge connects all stakeholders in one unified digital ecosystem.
+                A revolutionary mobile-first SaaS platform that streamlines operations, enhances communication, and delivers educational solutions seamlessly. ClassBridge connects all stakeholders in one unified digital ecosystem.
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
@@ -38,7 +38,7 @@ export default function Solutions() {
                   <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
                     <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
                   </div>
-                  <span className="text-gray-600">Advanced Digital Content Delivery</span>
+                  <span className="text-gray-600">Advanced Digital Learning Platform</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
@@ -55,94 +55,6 @@ export default function Solutions() {
               </ul>
               <Link to="/coming-soon">
                 <Button className="bg-operium-primary hover:bg-operium-dark text-white">Learn More</Button>
-              </Link>
-            </div>
-          </div>
-          
-          <div id="academic-content" className="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-            <div className="p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-operium-light p-3 rounded-lg mr-4">
-                  <Laptop className="text-operium-primary h-6 w-6" />
-                </div>
-                <h3 className="text-2xl font-bold">Academic Content</h3>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Premium quality digital academic content aligned with curriculum standards. Crafted by education experts to enhance instruction and boost engagement across various learning environments.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Dynamic Interactive Learning Materials</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Comprehensive Subject Resources</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Adaptive Assessment Solutions</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Personalized Learning Pathways</span>
-                </li>
-              </ul>
-              <Link to="/coming-soon">
-                <Button className="bg-operium-primary hover:bg-operium-dark text-white">Explore Content</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div id="books" className="bg-white rounded-xl shadow-md overflow-hidden card-hover">
-            <div className="p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-operium-light p-3 rounded-lg mr-4">
-                  <Book className="text-operium-primary h-6 w-6" />
-                </div>
-                <h3 className="text-2xl font-bold">Printed Academic Books</h3>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Meticulously crafted academic publications that complement our digital offerings, providing comprehensive educational materials for traditional and blended learning environments.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Standards-Aligned Comprehensive Textbooks</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Engaging Workbooks and Practice Materials</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Advanced Educator Resources</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-operium-light p-1 rounded-full mr-2 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-operium-primary"></div>
-                  </div>
-                  <span className="text-gray-600">Enriching Supplementary Materials</span>
-                </li>
-              </ul>
-              <Link to="/coming-soon">
-                <Button className="bg-operium-primary hover:bg-operium-dark text-white">View Books</Button>
               </Link>
             </div>
           </div>

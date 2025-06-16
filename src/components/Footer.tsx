@@ -90,18 +90,6 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('academic-content')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
-                  <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
-                  <span>Academic Content</span>
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection('books')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
-                  <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
-                  <span>Printed Books</span>
-                </button>
-              </li>
-              <li>
                 <button onClick={() => scrollToSection('ifp')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>IFP Solutions</span>

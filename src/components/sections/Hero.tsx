@@ -49,7 +49,7 @@ export default function Hero() {
                 <span className="text-operium-primary block mt-2">Innovation</span>
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-operium-neutral mb-6 md:mb-8 leading-relaxed max-w-2xl">
-                Empowering educational institutions with cutting-edge digital solutions that enhance teaching, learning, and administrative efficiency.
+                Empowering educational institutions with cutting-edge digital solutions that enhance teaching, learning, and administrative efficiency through innovative technology.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">

@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/" className="font-medium hover:text-operium-primary transition-colors">Home</Link>
           <button onClick={() => scrollToSection('about')} className="font-medium hover:text-operium-primary transition-colors">About Us</button>
-          <button onClick={() => scrollToSection('solutions')} className="font-medium hover:text-operium-primary transition-colors">Our Solutions</button>
+          <button onClick={() => scrollToSection('solutions')} className="font-medium hover:text-operium-primary transition-colors">EdTech Solutions</button>
           <button onClick={() => scrollToSection('why-choose')} className="font-medium hover:text-operium-primary transition-colors">Why Choose Us</button>
           <button onClick={() => scrollToSection('contact')} className="font-medium hover:text-operium-primary transition-colors">Contact</button>
           <Button 
@@ -64,7 +64,7 @@ export default function Navbar() {
           <div className="px-4 py-4 space-y-4 flex flex-col shadow-lg animate-fade-in">
             <Link to="/" className="font-medium hover:text-operium-primary transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>Home</Link>
             <button onClick={() => scrollToSection('about')} className="font-medium hover:text-operium-primary transition-colors py-1 text-left">About Us</button>
-            <button onClick={() => scrollToSection('solutions')} className="font-medium hover:text-operium-primary transition-colors py-1 text-left">Our Solutions</button>
+            <button onClick={() => scrollToSection('solutions')} className="font-medium hover:text-operium-primary transition-colors py-1 text-left">EdTech Solutions</button>
             <button onClick={() => scrollToSection('why-choose')} className="font-medium hover:text-operium-primary transition-colors py-1 text-left">Why Choose Us</button>
             <button onClick={() => scrollToSection('contact')} className="font-medium hover:text-operium-primary transition-colors py-1 text-left">Contact</button>
             <Button 

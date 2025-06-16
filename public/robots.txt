@@ -15,8 +15,11 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Sitemap location (you may want to add this later)
-# Sitemap: https://operium.in/sitemap.xml
+# Sitemap location
+Sitemap: https://operium.in/sitemap.xml
 
 # Crawl-delay for general bots
 Crawl-delay: 1
+
+# Host specification
+Host: https://operium.in

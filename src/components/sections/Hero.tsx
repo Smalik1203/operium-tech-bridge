@@ -37,7 +37,7 @@ export default function Hero() {
           <div className="animate-fade-in space-y-6 md:space-y-8 order-2 lg:order-1">
             <div>
               <div className="inline-flex items-center rounded-full border border-operium-primary/20 bg-operium-light px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-sm font-medium text-operium-primary mb-4 md:mb-6">
-                <span className="animate-pulse mr-1">•</span> Transforming Education
+                <span className="animate-pulse mr-1">•</span> Leading EdTech Company in India
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight font-inter">
                 <span className="relative inline-block">
@@ -46,10 +46,10 @@ export default function Hero() {
                 </span>
                 <br />
                 <span className="block mt-2">Education Through</span>
-                <span className="text-operium-primary block mt-2">Innovation</span>
+                <span className="text-operium-primary block mt-2">Digital Innovation</span>
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-operium-neutral mb-6 md:mb-8 leading-relaxed max-w-2xl">
-                Empowering educational institutions with cutting-edge digital solutions that enhance teaching, learning, and administrative efficiency through innovative technology.
+                Operium Technologies Pvt Ltd empowers educational institutions across India with cutting-edge digital solutions including ClassBridge platform and Interactive Flat Panels for enhanced teaching and learning experiences.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -57,7 +57,7 @@ export default function Hero() {
                 onClick={handleDiscoverEcosystem}
                 className="group bg-operium-primary hover:bg-operium-dark text-white px-6 py-6 rounded-xl shadow-lg shadow-operium-primary/20 transition-all hover:shadow-xl hover:shadow-operium-primary/30 text-base w-full sm:w-auto"
               >
-                Discover Our Ecosystem
+                Discover Our EdTech Solutions
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -82,7 +82,7 @@ export default function Hero() {
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-operium-primary/20 border-4 border-white transform hover:rotate-1 transition-transform duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Digital learning" 
+                  alt="Digital learning technology by Operium Technologies - Interactive classroom with students and teacher using advanced educational technology" 
                   className="rounded-lg object-cover w-full h-64 sm:h-80 md:h-96"
                 />
               </div>
@@ -95,7 +95,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xs sm:text-sm text-gray-900">Mobile-First</h3>
-                    <p className="text-xs text-operium-neutral">Accessible anywhere</p>
+                    <p className="text-xs text-operium-neutral">ClassBridge Platform</p>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xs sm:text-sm text-gray-900">Complete Solutions</h3>
-                    <p className="text-xs text-operium-neutral">End-to-end integration</p>
+                    <p className="text-xs text-operium-neutral">Interactive Flat Panels</p>
                   </div>
                 </div>
               </div>

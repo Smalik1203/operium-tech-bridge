@@ -81,8 +81,8 @@ export default function Hero() {
               {/* Main image with stylish frame */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-operium-primary/20 border-4 border-white transform hover:rotate-1 transition-transform duration-500">
                 <img 
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Modern classroom with students collaborating on digital devices and interactive learning technology" 
+                  src="/lovable-uploads/4e0171de-9bda-455a-9561-0727e4d09d67.png"
+                  alt="Interactive classroom with students using digital learning technology and smart board" 
                   className="rounded-lg object-cover w-full h-64 sm:h-80 md:h-96"
                 />
               </div>

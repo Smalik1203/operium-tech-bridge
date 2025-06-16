@@ -1,11 +1,18 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://operium.in</loc>
+    <loc>https://operium.in/</loc>
     <lastmod>2024-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://operium.in/lovable-uploads/d084ed39-b5b6-4949-b407-5c4d38ad9141.png</image:loc>
+      <image:title>Operium Technologies - Leading EdTech Solutions</image:title>
+      <image:caption>Educational Technology Solutions by Operium Technologies</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://operium.in/#about</loc>

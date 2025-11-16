@@ -9,8 +9,16 @@ export default function Navbar() {
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const navbar = document.querySelector('nav');
+    if (element && navbar) {
+      const navbarHeight = navbar.getBoundingClientRect().height;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
       setMobileMenuOpen(false);
     }
   };
@@ -20,12 +28,21 @@ export default function Navbar() {
   };
   
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-white/95 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center space-x-3">
-            <span className="font-bold text-xl md:text-2xl text-operium-primary font-inter">
-              Operium<span className="text-operium-secondary">Technologies</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src="/operium-logo.png" 
+              alt="Operium Technologies Logo" 
+              className="h-8 w-auto md:h-10 transition-transform group-hover:scale-105 object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = '/operium-logo.svg';
+              }}
+            />
+            <span className="font-bold text-xl md:text-2xl text-gray-900 font-inter group-hover:text-operium-primary transition-colors">
+              Operium<span className="text-operium-primary">Technologies</span>
             </span>
           </Link>
         </div>

@@ -27,6 +27,15 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <div className="flex items-center space-x-3 mb-2">
+                <img 
+                  src="/operium-logo.png" 
+                  alt="Operium Technologies Logo" 
+                  className="h-10 w-auto object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/operium-logo.svg';
+                  }}
+                />
                 <h3 className="text-2xl font-bold text-white">Operium Technologies</h3>
               </div>
               <div className="h-1 w-16 bg-operium-primary rounded"></div>
@@ -74,6 +83,12 @@ export default function Footer() {
                   <span>Why Choose Us</span>
                 </button>
               </li>
+              <li>
+                <Link to="/privacy-policy" className="group flex items-center hover:text-operium-primary transition-colors duration-300">
+                  <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
+                  <span>Privacy Policy</span>
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -87,12 +102,6 @@ export default function Footer() {
                 <button onClick={() => scrollToSection('classbridge')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
                   <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
                   <span>ClassBridge</span>
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection('ifp')} className="group flex items-center hover:text-operium-primary transition-colors duration-300">
-                  <ChevronRight className="h-4 w-4 mr-2 text-operium-primary group-hover:translate-x-1 transition-transform" />
-                  <span>IFP Solutions</span>
                 </button>
               </li>
             </ul>
@@ -128,7 +137,14 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="mb-4 md:mb-0">&copy; {currentYear} Operium Technologies Pvt Ltd. All rights reserved.</p>
+            <div className="mb-4 md:mb-0">
+              <p>&copy; {currentYear} Operium Technologies Pvt Ltd. All rights reserved.</p>
+              <div className="flex justify-center md:justify-start space-x-4 mt-2 text-sm">
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-operium-primary transition-colors">
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
             <div className="flex space-x-4">
               <a href="https://operium.in" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-operium-primary transition-colors">
                 <Globe className="h-4 w-4" />

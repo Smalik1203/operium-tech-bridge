@@ -77,17 +77,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+    <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50 scroll-mt-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <h2 className="section-title">Connect With Us</h2>
           <p className="section-subtitle">
             Have questions about our innovative solutions? Reach out to our expert team for personalized guidance tailored to your institution's needs.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-xl shadow-md p-8 border-t-4 border-operium-primary">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border-t-4 border-operium-primary">
             <h3 className="text-2xl font-bold mb-6 text-operium-primary">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -173,7 +173,7 @@ export default function Contact() {
           </div>
           
           <div>
-            <div className="bg-white rounded-xl shadow-md p-8 mb-8 border-t-4 border-operium-secondary">
+            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-6 md:mb-8 border-t-4 border-operium-secondary">
               <h3 className="text-2xl font-bold mb-6 text-operium-secondary">Contact Information</h3>
               
               <div className="space-y-6">

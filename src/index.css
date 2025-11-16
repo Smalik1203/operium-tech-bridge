@@ -37,10 +37,20 @@
     --radius: 0.5rem;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -49,7 +59,12 @@
   }
 
   .section-padding {
-    @apply py-12 md:py-20;
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Ensure sections are properly visible when scrolled to */
+  section[id] {
+    scroll-margin-top: clamp(3rem, 8vw, 5rem);
   }
 }
 
@@ -76,5 +91,104 @@
 
   .card-hover {
     @apply transition-all hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Text Animation Utilities */
+  .animate-text-fade-in {
+    animation: textFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-text-slide-up {
+    animation: textSlideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-text-slide-left {
+    animation: textSlideLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .animate-text-slide-right {
+    animation: textSlideRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+  .animate-stagger-6 { animation-delay: 0.6s; }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-operium-primary via-operium-secondary to-operium-primary bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes textSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(37, 99, 235, 0.5), 0 0 40px rgba(37, 99, 235, 0.3);
   }
 }

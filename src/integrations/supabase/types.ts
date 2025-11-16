@@ -11,7 +11,7 @@ export type Database = {
     Tables: {
       inquiries: {
         Row: {
-          created_at: string
+          created_at: string | null
           email: string
           id: string
           message: string
@@ -19,9 +19,10 @@ export type Database = {
           school: string | null
           status: string | null
           subject: string
+          updated_at: string | null
         }
         Insert: {
-          created_at?: string
+          created_at?: string | null
           email: string
           id?: string
           message: string
@@ -29,9 +30,10 @@ export type Database = {
           school?: string | null
           status?: string | null
           subject: string
+          updated_at?: string | null
         }
         Update: {
-          created_at?: string
+          created_at?: string | null
           email?: string
           id?: string
           message?: string
@@ -39,6 +41,7 @@ export type Database = {
           school?: string | null
           status?: string | null
           subject?: string
+          updated_at?: string | null
         }
         Relationships: []
       }

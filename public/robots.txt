@@ -39,13 +39,13 @@ User-agent: DotBot
 Disallow: /
 
 # Sitemap location
-Sitemap: https://operium.in/sitemap.xml
+Sitemap: https://operiumtechnologies.in/sitemap.xml
 
 # Crawl-delay for general bots
 Crawl-delay: 1
 
 # Host specification
-Host: https://operium.in
+Host: https://operiumtechnologies.in
 
 # Additional directives
 Request-rate: 1/10s

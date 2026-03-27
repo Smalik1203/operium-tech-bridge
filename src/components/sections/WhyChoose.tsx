@@ -1,74 +1,73 @@
 import React from 'react';
-import { CircleCheck, School, Users, Smartphone } from "lucide-react";
+
+const differentiators = [
+  {
+    title: 'Listen First',
+    desc: 'We don\'t assume we know everything. We spend time with teachers and administrators to understand their real problems before we try to solve them.',
+  },
+  {
+    title: 'Keep It Simple',
+    desc: 'Software should be easy to use, not filled with features nobody needs. We try to keep our interfaces clean so you can get your work done faster.',
+  },
+  {
+    title: 'Steady Improvements',
+    desc: 'Instead of making huge changes all at once, we release small, helpful updates regularly based on what our users tell us they need.',
+  },
+  {
+    title: 'We\'re Here to Help',
+    desc: 'Technology can be frustrating. When things go wrong, we try our best to be reachable and helpful. We want to be a support system for your institution.',
+  },
+];
 
 export default function WhyChoose() {
-  const features = [
-    {
-      icon: CircleCheck,
-      title: "Focused on Innovation",
-      desc: "We focus on continuous improvement, building products like ClassBridge and working on expanding our offerings to serve education better.",
-      gradient: "from-brand-blue to-brand-blue-light",
-      border: "border-brand-blue"
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile-First Design",
-      desc: "Our solutions are designed for mobile devices, making them accessible for administrators, educators, students, and parents.",
-      gradient: "from-brand-teal to-brand-teal-light",
-      border: "border-brand-teal"
-    },
-    {
-      icon: School,
-      title: "Scalable Solutions",
-      desc: "Our platform is designed to work for small learning centers and large institutions, adapting to different needs.",
-      gradient: "from-brand-blue to-brand-teal",
-      border: "border-brand-blue"
-    },
-    {
-      icon: Users,
-      title: "Support",
-      desc: "Our team helps with implementation and provides ongoing support to help you get the most out of our solutions.",
-      gradient: "from-brand-teal-light to-brand-blue",
-      border: "border-brand-teal"
-    }
-  ];
-
   return (
-    <section id="why-choose" className="section-padding bg-white scroll-mt-20 relative overflow-hidden" aria-labelledby="why-choose-heading">
-      {/* Background Elements */}
-      <div className="absolute inset-0 parallax-grid opacity-30" />
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 id="why-choose-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Why Choose <span className="gradient-text-two-tone">Operium Technologies</span>
-          </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            We combine technology with educational understanding to provide practical solutions for institutions of all sizes.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className="card-premium p-6 lg:p-8 text-center"
-              >
-                <div className="flex justify-center mb-6">
-                  <div className={`bg-gradient-to-br ${feature.gradient} p-4 rounded-2xl shadow-premium`}>
-                    <Icon className="text-white h-6 w-6" />
+    <section id="why-choose" className="section-white scroll-mt-20 py-24 md:py-32" aria-labelledby="why-choose-heading">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+
+        <div className="md:grid grid-cols-12 gap-12 items-start">
+
+          {/* Sticky Header Section */}
+          <div className="col-span-12 lg:col-span-5 mb-16 lg:mb-0 lg:sticky lg:top-32">
+            <h2 id="why-choose-heading" className="text-4xl md:text-5xl font-extrabold leading-[1.1] tracking-[-0.03em] text-gray-900 mb-6">
+              How we <br className="hidden lg:block" /> <span className="text-blue-600">work.</span>
+            </h2>
+            <p className="text-gray-600 text-xl leading-relaxed max-w-md">
+              We focus on building practical tools and supporting the people who use them every day.
+            </p>
+          </div>
+
+          {/* Staggered Vertical List (No Icons) */}
+          <div className="col-span-12 lg:col-span-7">
+            <div className="flex flex-col gap-12 md:gap-16">
+              {differentiators.map((item, i) => (
+                <div key={i} className="flex gap-6 md:gap-10">
+                  {/* Clean typographic indicator instead of icon */}
+                  <div className="flex-shrink-0 pt-1">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 text-sm font-bold text-gray-900">
+                      0{i + 1}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed md:max-w-lg">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
-                
-                <h3 className="text-xl font-bold mb-4 gradient-text-two-tone">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                  {feature.desc}
-                </p>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+
+            {/* Footer metric/statement */}
+            <div className="mt-16 pt-10 border-t border-gray-100">
+              <p className="text-xl font-medium text-gray-900 leading-snug">
+                "Our goal is simple: provide software that works reliably, so your staff can focus on what actually matters."
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

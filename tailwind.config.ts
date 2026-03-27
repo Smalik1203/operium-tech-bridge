@@ -67,22 +67,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Premium ClassBridge/Operium color system
+				// Refined brand colors — one strong blue, warm neutrals
 				brand: {
-					blue: '#1A73E8',      // ClassBridge electric blue
-					teal: '#13C5D0',      // Teal accent
-					navy: '#0A0A14',      // Deep navy background
-					'blue-light': '#4285F4',
-					'teal-light': '#4FD1C7',
+					blue: '#1A56DB',
+					'blue-hover': '#1648B8',
+					'blue-light': '#EBF0FF',
+					'blue-muted': '#3B6FE0',
+					dark: '#0F1117',
+					'dark-secondary': '#161921',
+					'dark-surface': '#1C1F2A',
 				},
 				operium: {
-					primary: '#1A73E8',    // ClassBridge blue
-					secondary: '#13C5D0',  // Teal gradient
-					accent: '#1A73E8',     // Electric blue
-					light: '#E8F0FE',      // Light blue background
-					dark: '#0A0A14',       // Deep navy
-					neutral: '#64748B',    // Slate for text
-					muted: '#F8FAFC'       // Very light background
+					primary: '#1A56DB',
+					dark: '#0F1117',
 				}
 			},
 			borderRadius: {

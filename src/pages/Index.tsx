@@ -8,15 +8,8 @@ import WhyChoose from '@/components/sections/WhyChoose';
 import Contact from '@/components/sections/Contact';
 
 const Index = () => {
-  // Update document title and meta description
   React.useEffect(() => {
-    document.title = 'Operium Technologies | Leading EdTech Solutions Provider in India | ClassBridge Platform';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Operium Technologies is a leading EdTech company in India, providing innovative educational technology solutions including ClassBridge - a mobile-first SaaS platform for schools and colleges. Transform your institution with digital learning solutions.');
-    }
+    document.title = 'Operium Technologies | EdTech Solutions Provider in India';
   }, []);
 
   return (

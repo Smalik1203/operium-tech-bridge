@@ -393,7 +393,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">12. Changes to This Privacy Policy</h2>
                 <p className="text-gray-600 leading-relaxed">
                   We may update our Privacy Policy from time to time. We will notify you of any changes by posting the 
-                  new Privacy Policy on this page at <strong>operium.in/privacy-policy</strong> and updating 
+                  new Privacy Policy on this page at <strong>operiumtechnologies.in/privacy-policy</strong> and updating 
                   the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes. 
                   Changes to this Privacy Policy are effective when they are posted on this page.
                 </p>
@@ -415,7 +415,7 @@ export default function PrivacyPolicy() {
                     <strong>Website:</strong> <a href="https://operiumtechnologies.in" target="_blank" rel="noopener noreferrer" className="text-operium-primary hover:underline">operiumtechnologies.in</a>
                   </p>
                   <p className="text-gray-600 mb-1">
-                    <strong>Email:</strong> <a href="mailto:contact@operium.in" className="text-operium-primary hover:underline">contact@operium.in</a>
+                    <strong>Email:</strong> <a href="mailto:contact@operiumtechnologies.in" className="text-operium-primary hover:underline">contact@operiumtechnologies.in</a>
                   </p>
                   <p className="text-gray-600 mb-1">
                     <strong>Phone:</strong> <a href="tel:+919391906310" className="text-operium-primary hover:underline">+91 9391906310</a> / 

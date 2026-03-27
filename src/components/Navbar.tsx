@@ -1,160 +1,122 @@
-import React, { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { scrollToSection } from "@/utils/scroll";
+
+const navLinks = [
+  { label: 'About', section: 'about' },
+  { label: 'Products', section: 'solutions' },
+  { label: 'Why Us', section: 'why-choose' },
+  { label: 'Contact', section: 'contact' },
+];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    const navbar = document.querySelector('nav');
-    if (element && navbar) {
-      const navbarHeight = navbar.getBoundingClientRect().height;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarHeight;
+  const [scrolled, setScrolled] = useState(false);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setMobileMenuOpen(false);
-    }
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScrollTo = (sectionId: string) => {
+    scrollToSection(sectionId);
+    setMobileMenuOpen(false);
   };
 
-  const handleRequestDemo = () => {
-    scrollToSection('contact');
-  };
-  
   return (
     <nav
-      className="bg-white/80 backdrop-blur-xl shadow-soft sticky top-0 z-50 border-b border-gray-100/50"
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-white/70 backdrop-blur-xl border-b border-gray-100'
+        : 'bg-transparent'
+        }`}
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src="/operium-logo.png" 
-              alt="Operium Technologies - Leading EdTech Solutions Provider in India" 
-              className="h-8 w-auto md:h-10 transition-opacity group-hover:opacity-80 object-contain"
-              width="120"
-              height="40"
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <div className="flex justify-between items-center h-16 md:h-[72px]">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2.5">
+            <img
+              src="/operium-logo.png"
+              alt="Operium Technologies"
+              className="h-7 md:h-8 w-auto object-contain"
+              width="96"
+              height="32"
               loading="eager"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = '/operium-logo.svg';
               }}
             />
-            <span className="font-bold text-xl md:text-2xl text-gray-900 font-inter group-hover:text-brand-blue transition-colors">
+            <span className="font-semibold text-[15px] md:text-base text-gray-900 tracking-tight">
               Operium<span className="text-brand-blue">Technologies</span>
             </span>
           </Link>
-        </div>
-        
-        {/* Desktop menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Link 
-            to="/" 
-            className="font-medium text-gray-700 hover:text-brand-blue transition-colors"
-          >
-            Home
-          </Link>
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="font-medium text-gray-700 hover:text-brand-blue transition-colors"
-          >
-            About Us
-          </button>
-          <button 
-            onClick={() => scrollToSection('solutions')} 
-            className="font-medium text-gray-700 hover:text-brand-blue transition-colors"
-          >
-            EdTech Solutions
-          </button>
-          <button 
-            onClick={() => scrollToSection('why-choose')} 
-            className="font-medium text-gray-700 hover:text-brand-blue transition-colors"
-          >
-            Why Choose Us
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')} 
-            className="font-medium text-gray-700 hover:text-brand-blue transition-colors"
-          >
-            Contact
-          </button>
-          <Button 
-            variant="outline" 
-            className="px-6 py-2 rounded-xl border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-200"
-            onClick={handleRequestDemo}
-          >
-            <span className="flex items-center">
-              Request Demo
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </span>
-          </Button>
-        </div>
-        
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <Button 
-            variant="ghost" 
-            size="icon"
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <button
+                key={link.section}
+                onClick={() => handleScrollTo(link.section)}
+                className="px-3.5 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
+              >
+                {link.label}
+              </button>
+            ))}
+            <button
+              onClick={() => handleScrollTo('contact')}
+              className="ml-3 px-5 py-2 text-[13px] font-semibold text-white bg-brand-blue hover:bg-brand-blue-hover rounded-lg transition-colors"
+            >
+              Partner With Us
+            </button>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-xl"
+            className="md:hidden p-2 -mr-2 text-gray-600 hover:text-gray-900"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100">
-            <div className="px-4 py-4 space-y-4 flex flex-col shadow-lg">
-              <Link 
-                to="/" 
-                className="font-medium hover:text-brand-blue transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+          >
+            <div className="px-5 py-3 flex flex-col">
+              {navLinks.map((link, i) => (
+                <motion.button
+                  key={link.section}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  onClick={() => handleScrollTo(link.section)}
+                  className="py-3 text-left text-[15px] font-medium text-gray-700 hover:text-brand-blue transition-colors border-b border-gray-50 last:border-0"
+                >
+                  {link.label}
+                </motion.button>
+              ))}
+              <button
+                onClick={() => handleScrollTo('contact')}
+                className="mt-3 mb-2 w-full py-2.5 text-[14px] font-semibold text-white bg-brand-blue rounded-lg"
               >
-                Home
-              </Link>
-              <button 
-                onClick={() => scrollToSection('about')} 
-                className="font-medium hover:text-brand-blue transition-colors py-2 text-left"
-              >
-                About Us
+                Partner With Us
               </button>
-              <button 
-                onClick={() => scrollToSection('solutions')} 
-                className="font-medium hover:text-brand-blue transition-colors py-2 text-left"
-              >
-                EdTech Solutions
-              </button>
-              <button 
-                onClick={() => scrollToSection('why-choose')} 
-                className="font-medium hover:text-brand-blue transition-colors py-2 text-left"
-              >
-                Why Choose Us
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="font-medium hover:text-brand-blue transition-colors py-2 text-left"
-              >
-                Contact
-              </button>
-              <Button 
-                className="bg-gradient-to-r from-brand-blue to-brand-teal hover:from-brand-blue-light hover:to-brand-teal-light text-white w-full mt-4"
-                onClick={handleRequestDemo}
-              >
-                Request Demo
-              </Button>
             </div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>

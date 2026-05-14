@@ -1,450 +1,320 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Shield, Lock, Eye, UserCheck, FileText, Mail } from 'lucide-react';
+
+const sections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'what-we-collect', label: 'What we collect' },
+  { id: 'how-we-use', label: 'How we use it' },
+  { id: 'app-permissions', label: 'App permissions' },
+  { id: 'how-we-share', label: 'How we share it' },
+  { id: 'security', label: 'Security' },
+  { id: 'retention', label: 'How long we keep it' },
+  { id: 'your-rights', label: 'Your rights' },
+  { id: 'children', label: 'Children' },
+  { id: 'third-parties', label: 'Third-party services' },
+  { id: 'international', label: 'International transfers' },
+  { id: 'changes', label: 'Changes to this policy' },
+  { id: 'contact', label: 'Contact us' },
+];
 
 export default function PrivacyPolicy() {
-  const lastUpdated = "January 15, 2025";
-  
+  const lastUpdated = 'January 15, 2025';
+  const [activeId, setActiveId] = useState<string>(sections[0].id);
+
+  useEffect(() => {
+    document.title = 'Privacy Policy | Operium Labs';
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible?.target.id) setActiveId(visible.target.id);
+      },
+      { rootMargin: '-96px 0px -60% 0px', threshold: 0 }
+    );
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      <div className="flex-grow">
-        <div className="bg-gradient-to-r from-operium-labs-primary to-operium-labs-dark text-white py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="flex justify-center mb-4">
-                <Shield className="h-16 w-16" />
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-              <p className="text-xl text-gray-100">
-                Your privacy is important to us. This policy explains how we collect, use, and protect your information.
-              </p>
-              <p className="text-sm text-gray-200 mt-4">
-                Last Updated: {lastUpdated}
-              </p>
-            </div>
+
+      <main className="flex-grow">
+        {/* Header — quiet, not a marketing banner */}
+        <header className="border-b border-gray-100">
+          <div className="max-w-5xl mx-auto px-5 md:px-8 pt-12 pb-10 md:pt-16 md:pb-12">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors mb-6"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              Back to home
+            </Link>
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Legal</p>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight tracking-[-0.02em] text-gray-900 mb-4">
+              Privacy Policy
+            </h1>
+            <p className="text-base text-gray-600 max-w-2xl leading-relaxed">
+              How Operium Labs collects, uses, stores, and shares information about the people and institutions who use our services.
+            </p>
+            <p className="text-sm text-gray-400 mt-4">Last updated · {lastUpdated}</p>
           </div>
-        </div>
+        </header>
 
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <div className="prose prose-lg max-w-none">
-              
-              {/* Introduction */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <FileText className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  1. Introduction
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Operium Labs ("we," "our," or "us") operates mobile applications and web services 
-                  accessible at <strong>operiumlabs.com</strong> (collectively, the "Service"). This Privacy Policy 
-                  informs you of our policies regarding the collection, use, and disclosure of personal data when you use 
-                  our Service and the choices you have associated with that data.
+        {/* Body — sticky TOC on desktop, prose on the right */}
+        <div className="max-w-5xl mx-auto px-5 md:px-8 py-12 md:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            {/* Sticky TOC */}
+            <aside className="lg:col-span-3">
+              <nav aria-label="Privacy policy sections" className="lg:sticky lg:top-24">
+                <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-widest mb-4">
+                  On this page
                 </p>
-                <p className="text-gray-600 leading-relaxed">
-                  By using our Service, you agree to the collection and use of information in accordance with this policy. 
-                  If you do not agree with our policies and practices, do not use our Service.
-                </p>
-              </section>
-
-              {/* Information We Collect */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Eye className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  2. Information We Collect
-                </h2>
-                
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">2.1 Information You Provide</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We collect information that you voluntarily provide to us when you:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li>Register for an account or create a profile</li>
-                  <li>Use our educational services and features</li>
-                  <li>Contact us for support or inquiries</li>
-                  <li>Participate in surveys or feedback programs</li>
-                  <li>Subscribe to newsletters or communications</li>
+                <ul className="space-y-1.5">
+                  {sections.map((s) => (
+                    <li key={s.id}>
+                      <a
+                        href={`#${s.id}`}
+                        className={`block text-sm leading-snug transition-colors py-1 ${
+                          activeId === s.id
+                            ? 'text-blue-600 font-semibold'
+                            : 'text-gray-600 hover:text-gray-900'
+                        }`}
+                      >
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  This information may include:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Account Information:</strong> Full name, email address, phone number, password (encrypted), and profile information</li>
-                  <li><strong>Educational Information:</strong> School name, class/grade, student ID, academic records, attendance data, test scores, assignments, and related educational data</li>
-                  <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely through third-party payment processors)</li>
-                  <li><strong>Communication Data:</strong> Messages, inquiries, and feedback you send to us</li>
-                </ul>
+              </nav>
+            </aside>
 
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">2.2 Automatically Collected Information</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  When you access or use our Service, we automatically collect certain technical information, including:
+            {/* Content */}
+            <article className="lg:col-span-9 max-w-3xl">
+              <Section id="overview" title="Overview">
+                <p>
+                  Operium Labs builds three products for Indian K-12 schools: Relay (parent communication on WhatsApp), ClassBridge (school management), and LearnLab (interactive science and math content). This Privacy Policy explains what information we collect through these products and our website, how we use it, and the choices you have.
                 </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Device Information:</strong> Device type, manufacturer, model, operating system version, unique device identifiers (such as Android ID, iOS ID), device language, screen resolution, and mobile network information</li>
-                  <li><strong>Log Data:</strong> IP address, browser type and version, access times and dates, pages viewed, time spent on pages, clickstream data, and referring website addresses</li>
-                  <li><strong>Usage Data:</strong> Features accessed, actions taken, time spent on features, frequency of use, performance data, error logs, and crash reports</li>
-                  <li><strong>Location Data:</strong> General location information (city, state, country) based on IP address. We do not collect precise GPS location data unless you explicitly grant permission and it is necessary for specific features</li>
-                  <li><strong>App Information:</strong> App version, installation source, and update history</li>
-                </ul>
+                <p>
+                  This policy applies to <strong>operiumlabs.com</strong>, our mobile applications, and our web services. By using any of them, you agree to the practices described here. If you don't agree, please don't use the services.
+                </p>
+              </Section>
 
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">2.3 Cookies and Tracking Technologies</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We use cookies, web beacons, and similar tracking technologies to collect and store information about your use of our Service. These technologies help us:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li>Remember your preferences and settings</li>
-                  <li>Analyze how you use our Service</li>
-                  <li>Improve and personalize your experience</li>
-                  <li>Provide security and prevent fraud</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed">
-                  You can control cookies through your browser or device settings. However, disabling cookies may limit your ability to use certain features of our Service.
-                </p>
-              </section>
+              <Section id="what-we-collect" title="What we collect">
+                <p>We collect three kinds of information:</p>
 
-              {/* How We Use Information */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <UserCheck className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  3. How We Use Your Information
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We use the collected information for the following purposes, based on our legitimate business interests, 
-                  contractual necessity, legal obligations, and your consent:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Service Delivery:</strong> To provide, operate, maintain, and improve our Service, including processing registrations, managing accounts, and delivering educational content</li>
-                  <li><strong>Transaction Processing:</strong> To process payments, manage subscriptions, send invoices, and handle billing-related communications</li>
-                  <li><strong>Communication:</strong> To send you service-related notifications, updates, educational content, administrative messages, and respond to your inquiries and support requests</li>
-                  <li><strong>Personalization:</strong> To customize your experience, provide personalized content and recommendations, and remember your preferences</li>
-                  <li><strong>Analytics and Improvement:</strong> To analyze usage patterns, understand how users interact with our Service, identify trends, and improve functionality, performance, and user experience</li>
-                  <li><strong>Security and Safety:</strong> To detect, prevent, and address fraud, security threats, technical issues, unauthorized access, and other harmful activities</li>
-                  <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, legal processes, and government requests, and to enforce our Terms of Service and other agreements</li>
-                  <li><strong>Research and Development:</strong> To conduct research, develop new features, and test improvements to our Service</li>
-                  <li><strong>Marketing:</strong> To send you promotional communications about our services (with your consent, where required by law). You can opt-out at any time</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed">
-                  We process your personal information based on: (1) your consent, (2) performance of a contract, (3) compliance with legal obligations, 
-                  (4) protection of vital interests, (5) public interest, or (6) legitimate business interests.
-                </p>
-              </section>
+                <SubHeading>Information you give us</SubHeading>
+                <p>When you register, set up your school, contact support, or use our services, you provide information directly. This typically includes:</p>
+                <BulletList items={[
+                  <><strong>Account details</strong> — name, email, phone number, encrypted password, role (teacher, parent, admin, student), and profile information.</>,
+                  <><strong>School and academic data</strong> — institution name, class or grade, student ID, attendance, assignments, exam scores, fee records, timetables, and other records required to run a school.</>,
+                  <><strong>Communication data</strong> — messages, broadcasts, support tickets, and any content you send through our products.</>,
+                  <><strong>Payment information</strong> — billing address and payment method details, handled by our payment partners. We don't store full card numbers ourselves.</>,
+                ]} />
 
-              {/* Data Sharing */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Lock className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  4. Data Sharing and Disclosure
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>We do not sell, rent, or trade your personal information to third parties for their marketing purposes.</strong> 
-                  We may share your information only in the following limited circumstances:
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">4.1 Service Providers and Business Partners</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We may share information with trusted third-party service providers who perform services on our behalf and are 
-                  contractually bound to protect your information. These include:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Cloud Infrastructure:</strong> Supabase, AWS, and other cloud hosting providers for data storage and processing</li>
-                  <li><strong>Analytics Services:</strong> Google Analytics and similar services to understand usage patterns (data is anonymized where possible)</li>
-                  <li><strong>Payment Processors:</strong> Secure payment processing services (we do not store full payment card details)</li>
-                  <li><strong>Communication Services:</strong> Email delivery, SMS, and push notification services</li>
-                  <li><strong>Customer Support:</strong> Help desk and customer support platforms</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  These service providers are required to: (1) use your information only for the purposes we specify, 
-                  (2) implement appropriate security measures, (3) comply with applicable privacy laws, and (4) not disclose 
-                  your information to other parties without our authorization.
-                </p>
+                <SubHeading>Information collected automatically</SubHeading>
+                <p>When you use our products, our systems record technical information that helps us operate the service and diagnose problems. This includes device type, operating system, app version, IP address, time of access, and pages or features used.</p>
 
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">4.2 Educational Institutions</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  If you are a student, teacher, or administrator associated with an educational institution using our Service, 
-                  we may share relevant information with your school or educational institution as necessary to:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li>Provide educational services and manage academic records</li>
-                  <li>Facilitate communication between students, teachers, and administrators</li>
-                  <li>Generate reports and analytics for educational purposes</li>
-                  <li>Comply with educational institution policies and requirements</li>
-                </ul>
+                <SubHeading>Cookies and similar technologies</SubHeading>
+                <p>Our website and web app use cookies and similar storage technologies for authentication, session management, security, and to remember your preferences. You can disable cookies in your browser settings, but some parts of the service may not work without them.</p>
+              </Section>
 
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">4.3 Legal Requirements and Law Enforcement</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We may disclose your information if we believe it is necessary to:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li>Comply with applicable laws, regulations, legal processes, or government requests</li>
-                  <li>Respond to subpoenas, court orders, or other legal processes</li>
-                  <li>Enforce our Terms of Service, Privacy Policy, or other agreements</li>
-                  <li>Protect our rights, property, or safety, or that of our users or others</li>
-                  <li>Investigate potential violations or prevent fraud, security threats, or illegal activities</li>
-                </ul>
+              <Section id="how-we-use" title="How we use it">
+                <p>We use the information we collect to:</p>
+                <BulletList items={[
+                  'Run our products — process attendance, deliver messages, generate report cards, calculate fees, and everything else the products are built to do.',
+                  'Communicate with you about your account, send transactional messages, respond to support requests, and notify you of important changes.',
+                  'Improve the service — understand how features are used, fix bugs, and decide what to build next.',
+                  'Keep the service secure — detect and prevent fraud, abuse, and unauthorised access.',
+                  'Meet our legal and regulatory obligations.',
+                ]} />
+                <p>We do not sell your personal information. We do not use student data to train advertising models or sell it to third parties.</p>
+              </Section>
 
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">4.4 Business Transfers</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  In the event of a merger, acquisition, reorganization, bankruptcy, or sale of all or a portion of our assets, 
-                  your information may be transferred to the acquiring entity. We will notify you of any such change in ownership 
-                  or control of your personal information, and the acquiring entity will be required to honor the commitments in this Privacy Policy.
-                </p>
+              <Section id="app-permissions" title="App permissions">
+                <p>Our mobile applications request the following device permissions only when needed for specific features. You can grant or deny any of them at any time in your device settings.</p>
+                <BulletList items={[
+                  <><strong>Internet</strong> — required to connect to our servers.</>,
+                  <><strong>Storage</strong> — to cache content and data locally so the app works offline.</>,
+                  <><strong>Camera</strong> — to scan documents, take profile pictures, or submit photo-based assignments. Used only when you take the action.</>,
+                  <><strong>Microphone</strong> — to record voice notes or audio for assignments. Used only when you take the action.</>,
+                  <><strong>Notifications</strong> — to deliver alerts about attendance, fees, exams, and parent messages.</>,
+                  <><strong>Location</strong> — only if a feature requires it (for example, marking attendance at the school). We don't collect background location.</>,
+                  <><strong>Contacts</strong> — only if you choose to import contacts. Optional.</>,
+                ]} />
+                <p>Denying a permission may limit specific features but core functionality stays available.</p>
+              </Section>
 
-                <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">4.5 With Your Consent</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We may share your information with other parties when you explicitly consent to such sharing, such as when 
-                  you choose to connect your account with third-party services or participate in promotional activities.
-                </p>
-              </section>
+              <Section id="how-we-share" title="How we share it">
+                <p>We share information only in the situations below.</p>
 
-              {/* Mobile App Permissions */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">5. Mobile App Permissions</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Our mobile application may request certain permissions on your device to provide specific features and functionality. 
-                  These permissions are requested only when necessary, and you can grant or deny them at any time through your device settings.
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Permissions We May Request:</strong>
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Internet/Network Access:</strong> Required to connect to our servers and provide core functionality</li>
-                  <li><strong>Storage:</strong> To save educational content, assignments, and app data locally on your device</li>
-                  <li><strong>Camera:</strong> To capture photos for assignments, profile pictures, or document scanning (if applicable)</li>
-                  <li><strong>Microphone:</strong> To record audio for educational activities or voice notes (if applicable)</li>
-                  <li><strong>Location:</strong> Only if required for specific features (e.g., attendance tracking). We do not collect precise GPS location without your explicit permission</li>
-                  <li><strong>Notifications:</strong> To send you important updates, alerts, and educational notifications</li>
-                  <li><strong>Contacts:</strong> Only if you choose to sync contacts for communication features (optional)</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed">
-                  You can manage these permissions at any time through your device's settings. Denying certain permissions may limit 
-                  your ability to use some features of our Service, but core functionality will remain available.
-                </p>
-              </section>
+                <SubHeading>With your school or institution</SubHeading>
+                <p>If you're a student, parent, or teacher using ClassBridge or LearnLab, your school is the data controller for academic records. We share your information with your school as part of running the service. The school decides what is recorded, who in the school can see it, and how long it is retained.</p>
 
-              {/* Data Security */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Lock className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  6. Data Security
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We implement industry-standard technical and organizational security measures to protect your personal information 
-                  against unauthorized access, alteration, disclosure, or destruction. Our security measures include:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Encryption:</strong> Data encryption in transit (TLS/SSL) and at rest using industry-standard encryption algorithms</li>
-                  <li><strong>Access Controls:</strong> Role-based access controls, multi-factor authentication, and regular access reviews</li>
-                  <li><strong>Security Monitoring:</strong> Continuous monitoring, intrusion detection, and security incident response procedures</li>
-                  <li><strong>Regular Updates:</strong> Regular security assessments, vulnerability scanning, and timely application of security patches</li>
-                  <li><strong>Secure Infrastructure:</strong> Secure data centers, firewalls, and network security measures</li>
-                  <li><strong>Data Backup:</strong> Regular encrypted backups with disaster recovery procedures</li>
-                  <li><strong>Employee Training:</strong> Regular security awareness training for employees and contractors</li>
-                  <li><strong>Incident Response:</strong> Established procedures for responding to security incidents and data breaches</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Data Breach Notification:</strong> In the event of a data breach that may affect your personal information, 
-                  we will notify you and relevant authorities as required by applicable laws, typically within 72 hours of becoming aware 
-                  of the breach. Notifications will include information about the nature of the breach, the data affected, and steps we are 
-                  taking to address it.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use 
-                  commercially acceptable means to protect your information, we cannot guarantee absolute security. You are responsible 
-                  for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
-                </p>
-              </section>
+                <SubHeading>With service providers we rely on</SubHeading>
+                <p>We use third-party providers for cloud hosting and infrastructure, transactional messaging (including the WhatsApp Business API for Relay), authentication, analytics, payment processing, and similar operational functions. These providers process information on our behalf under contracts that require them to protect it and use it only for the purposes we specify.</p>
 
-              {/* Data Retention */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">7. Data Retention</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  We retain your personal information only for as long as necessary to fulfill the purposes outlined in this 
-                  Privacy Policy, unless a longer retention period is required or permitted by law. Our retention periods are 
-                  based on:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li>The nature of the information and the purpose for which it was collected</li>
-                  <li>Legal, regulatory, and contractual requirements</li>
-                  <li>Legitimate business interests (e.g., fraud prevention, dispute resolution)</li>
-                  <li>Your account status (active accounts are retained while active and for a reasonable period after closure)</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Retention Periods:</strong>
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Account Information:</strong> Retained while your account is active and for up to 7 years after account closure for legal and tax purposes</li>
-                  <li><strong>Educational Records:</strong> Retained as required by educational institutions and applicable laws (typically 5-7 years after graduation or withdrawal)</li>
-                  <li><strong>Transaction Records:</strong> Retained for 7 years for accounting, tax, and legal compliance purposes</li>
-                  <li><strong>Marketing Communications:</strong> Retained until you opt-out or unsubscribe</li>
-                  <li><strong>Support Communications:</strong> Retained for 3 years after the last interaction</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed">
-                  When we no longer need your information, we will securely delete or anonymize it using industry-standard methods. 
-                  Some information may be retained in backup systems for a limited period before permanent deletion. If you request 
-                  deletion of your information, we will process your request in accordance with applicable laws and this Privacy Policy.
-                </p>
-              </section>
+                <SubHeading>For legal reasons</SubHeading>
+                <p>We may disclose information if required by law, court order, or government request, or if we reasonably believe disclosure is necessary to protect the rights, property, or safety of Operium Labs, our users, or the public.</p>
 
-              {/* Your Rights */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <UserCheck className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  8. Your Rights and Choices
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Depending on your location and applicable laws (such as GDPR, CCPA, and other data protection regulations), 
-                  you may have the following rights regarding your personal information:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Right to Access:</strong> Request access to and receive a copy of your personal information we hold</li>
-                  <li><strong>Right to Rectification:</strong> Request correction of inaccurate, incomplete, or outdated information</li>
-                  <li><strong>Right to Erasure (Right to be Forgotten):</strong> Request deletion of your personal information, subject to certain exceptions (e.g., legal obligations, legitimate business interests)</li>
-                  <li><strong>Right to Data Portability:</strong> Request a copy of your data in a structured, commonly used, and machine-readable format</li>
-                  <li><strong>Right to Object:</strong> Object to processing of your information based on legitimate interests or for direct marketing purposes</li>
-                  <li><strong>Right to Restrict Processing:</strong> Request restriction of processing in certain circumstances</li>
-                  <li><strong>Right to Withdraw Consent:</strong> Withdraw your consent at any time where processing is based on consent (withdrawal does not affect lawfulness of processing before withdrawal)</li>
-                  <li><strong>Right to Opt-Out:</strong> Opt-out of the sale or sharing of personal information (we do not sell your information, but you can opt-out of certain data sharing)</li>
-                  <li><strong>Right to Non-Discrimination:</strong> Exercise your privacy rights without discrimination</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>How to Exercise Your Rights:</strong>
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below. 
-                  We will respond to your request within a reasonable timeframe, typically within 30 days, and may require verification 
-                  of your identity to protect your privacy.
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Account Settings:</strong> You can also manage certain aspects of your information directly through your account 
-                  settings in our mobile application or web service, including updating your profile information, managing notification 
-                  preferences, and adjusting privacy settings.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong>California Privacy Rights:</strong> If you are a California resident, you have additional rights under the 
-                  California Consumer Privacy Act (CCPA), including the right to know what personal information we collect, the right 
-                  to delete personal information, and the right to opt-out of the sale of personal information (we do not sell your information).
-                </p>
-              </section>
+                <SubHeading>In a business transaction</SubHeading>
+                <p>If Operium Labs is acquired, merged, or undergoes a similar transaction, your information may be transferred to the new entity. You will be notified of any change in control and any material change to this policy.</p>
 
-              {/* Children's Privacy */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">9. Children's Privacy</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Our Service is designed for use by educational institutions and may be used by students, including those 
-                  under the age of 18. We comply with applicable laws regarding children's privacy, including:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                  <li>Collecting only information necessary for educational purposes</li>
-                  <li>Obtaining appropriate consent from parents or educational institutions</li>
-                  <li>Providing parents and educational institutions with access to and control over children's information</li>
-                  <li>Not knowingly collecting personal information from children under 13 without parental consent</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed mt-4">
-                  If you are a parent or guardian and believe your child has provided us with personal information, 
-                  please contact us immediately.
-                </p>
-              </section>
+                <SubHeading>With your consent</SubHeading>
+                <p>We will share information for any purpose not listed above only with your explicit consent.</p>
+              </Section>
 
-              {/* Third-Party Services */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">10. Third-Party Services and Links</h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Our Service may contain links to third-party websites, applications, or services that are not operated or controlled by us. 
-                  We are not responsible for the privacy practices, content, or security of these third-party services. We encourage you to 
-                  review the privacy policies and terms of service of any third-party services you access.
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Third-Party Services We Use:</strong>
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Our Service integrates with the following third-party services to provide functionality:
-                </p>
-                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-                  <li><strong>Supabase:</strong> Cloud database, authentication, and backend infrastructure services. 
-                    <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-operium-labs-primary hover:underline ml-1">View their privacy policy</a></li>
-                  <li><strong>Google Services:</strong> Google Analytics for usage analytics, Google Firebase for push notifications (if applicable), 
-                    and Google Sign-In for authentication (if applicable). 
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-operium-labs-primary hover:underline ml-1">View Google's privacy policy</a></li>
-                  <li><strong>Payment Processors:</strong> Secure payment processing services for subscription and transaction processing. 
-                    Payment information is processed directly by these providers and not stored by us.</li>
-                  <li><strong>Cloud Storage:</strong> AWS (Amazon Web Services) or similar cloud infrastructure providers for data hosting and storage</li>
-                </ul>
-                <p className="text-gray-600 leading-relaxed">
-                  These third-party services may collect, use, and share your information according to their own privacy policies. 
-                  We recommend reviewing their privacy policies to understand how they handle your data.
-                </p>
-              </section>
+              <Section id="security" title="Security">
+                <p>We take security seriously. The measures we use include:</p>
+                <BulletList items={[
+                  'Encryption in transit (TLS) for all connections between your device and our servers, and encryption at rest for data we store.',
+                  'Role-based access controls — staff can only see the data they need to do their job, and access is reviewed regularly.',
+                  'Monitoring, vulnerability scanning, and timely patching of the systems we run.',
+                  'Backups, with documented disaster recovery procedures.',
+                  'Security training for the people who build and operate the services.',
+                ]} />
+                <p>No system is completely secure. If a breach happens that affects your information, we will notify you and the relevant authorities as required by law — typically within 72 hours of becoming aware of it — and tell you what happened, what was affected, and what we're doing about it.</p>
+                <p>You are responsible for keeping your password safe and for activity that happens under your account.</p>
+              </Section>
 
-              {/* International Data Transfers */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">11. International Data Transfers</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  Your information may be transferred to and processed in countries other than your country of residence. 
-                  These countries may have data protection laws that differ from those in your country. We take appropriate 
-                  measures to ensure that your information receives an adequate level of protection in accordance with this 
-                  Privacy Policy.
-                </p>
-              </section>
+              <Section id="retention" title="How long we keep it">
+                <p>We keep information only as long as we need it for the purposes in this policy, or as required by law. Roughly:</p>
+                <BulletList items={[
+                  <><strong>Account information</strong> — kept while your account is active, and for a period after closure for legal, tax, and audit reasons.</>,
+                  <><strong>Academic records</strong> — kept as required by the school and by applicable education and records-retention laws.</>,
+                  <><strong>Transaction records</strong> — kept for the period required by Indian tax and accounting law.</>,
+                  <><strong>Support communications</strong> — kept for a reasonable period after the last interaction.</>,
+                  <><strong>Marketing communications</strong> — kept until you unsubscribe.</>,
+                ]} />
+                <p>When we no longer need information, we delete or anonymise it. Some copies may remain in encrypted backups for a limited period before being purged.</p>
+              </Section>
 
-              {/* Changes to Privacy Policy */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">12. Changes to This Privacy Policy</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  We may update our Privacy Policy from time to time. We will notify you of any changes by posting the 
-                  new Privacy Policy on this page at <strong>operiumlabs.com/privacy-policy</strong> and updating 
-                  the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes. 
-                  Changes to this Privacy Policy are effective when they are posted on this page.
-                </p>
-              </section>
+              <Section id="your-rights" title="Your rights">
+                <p>Depending on where you live, you may have the following rights regarding the personal information we hold about you:</p>
+                <BulletList items={[
+                  <><strong>Access</strong> — request a copy of the information we hold about you.</>,
+                  <><strong>Correction</strong> — ask us to fix information that's wrong or out of date.</>,
+                  <><strong>Deletion</strong> — ask us to delete your information, subject to legal limits (for example, where we are required to keep records).</>,
+                  <><strong>Portability</strong> — receive your information in a structured, machine-readable format.</>,
+                  <><strong>Objection or restriction</strong> — object to or restrict certain processing.</>,
+                  <><strong>Withdraw consent</strong> — withdraw consent for processing based on consent, at any time.</>,
+                ]} />
+                <p>You can manage some of these directly inside your account. For everything else, write to us at the email below. We'll respond within 30 days and may need to verify your identity first.</p>
+                <p>If you're a student or parent, some rights are exercised through your school as the data controller for academic records.</p>
+              </Section>
 
-              {/* Contact Us */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Mail className="h-6 w-6 mr-2 text-operium-labs-primary" />
-                  13. Contact Us
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, 
-                  please contact us:
-                </p>
-                <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-operium-labs-primary">
-                  <p className="text-gray-800 font-semibold mb-2">Operium Labs</p>
-                  <p className="text-gray-600 mb-1">
-                    <strong>Website:</strong> <a href="https://operiumlabs.com" target="_blank" rel="noopener noreferrer" className="text-operium-labs-primary hover:underline">operiumlabs.com</a>
-                  </p>
-                  <p className="text-gray-600 mb-1">
-                    <strong>Email:</strong> <a href="mailto:contact@operiumlabs.com" className="text-operium-labs-primary hover:underline">contact@operiumlabs.com</a>
-                  </p>
-                  <p className="text-gray-600 mb-1">
-                    <strong>Phone:</strong> <a href="tel:+919391906310" className="text-operium-labs-primary hover:underline">+91 9391906310</a> / 
-                    <a href="tel:+919391906311" className="text-operium-labs-primary hover:underline"> +91 9391906311</a>
-                  </p>
-                  <p className="text-gray-600">
-                    <strong>Address:</strong><br />
-                    Prajay Princeton Towers, 1017, 10th floor,<br />
-                    Doctors Colony, Saroornagar,<br />
-                    Hyderabad, Telangana 500035, India
-                  </p>
+              <Section id="children" title="Children">
+                <p>Our services are used by educational institutions, which means students — including those under 18 — interact with them. We:</p>
+                <BulletList items={[
+                  'Collect only the information needed for educational purposes.',
+                  'Rely on schools to obtain appropriate parental consent where required by law.',
+                  'Provide schools and parents with the controls needed to manage children\'s information.',
+                  'Do not knowingly collect personal information directly from children under 13 without parental or institutional consent.',
+                ]} />
+                <p>If you're a parent who believes a child has provided us information without consent, contact us and we'll address it.</p>
+              </Section>
+
+              <Section id="third-parties" title="Third-party services">
+                <p>Our products may include links to third-party websites or apps, or integrate with services run by other companies (for example, messaging platforms, payment gateways, or identity providers). Those services have their own privacy policies and terms — we are not responsible for how they handle your information.</p>
+                <p>We use third-party providers in categories including cloud infrastructure and hosting, transactional and WhatsApp messaging, authentication, analytics, payment processing, and customer support tooling. They process information only on our behalf and only for the purposes set out in our agreements with them. A current list of our subprocessors is available on request.</p>
+              </Section>
+
+              <Section id="international" title="International transfers">
+                <p>We're based in India and most of our infrastructure runs in India. Some of the providers we use may process information in other countries. Where information is transferred outside India, we take reasonable steps to ensure it receives an equivalent level of protection.</p>
+              </Section>
+
+              <Section id="changes" title="Changes to this policy">
+                <p>We may update this Privacy Policy from time to time. When we make material changes, we'll update the "Last updated" date at the top of this page and, where appropriate, notify you through the product or by email. Continuing to use our services after the change means you accept the updated policy.</p>
+              </Section>
+
+              <Section id="contact" title="Contact us">
+                <p>For privacy questions, requests to exercise your rights, or any concerns about how we handle your information, reach out to us.</p>
+                <div className="mt-5 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                  <p className="text-sm font-semibold text-gray-900 mb-4">Operium Labs</p>
+                  <dl className="space-y-3 text-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                      <dt className="text-gray-500 sm:w-20 flex-shrink-0">Email</dt>
+                      <dd>
+                        <a href="mailto:contact@operiumlabs.com" className="text-blue-600 hover:underline">
+                          contact@operiumlabs.com
+                        </a>
+                      </dd>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                      <dt className="text-gray-500 sm:w-20 flex-shrink-0">Phone</dt>
+                      <dd className="text-gray-700">
+                        <a href="tel:+919391906310" className="hover:text-blue-600">+91 9391906310</a>
+                        <span className="text-gray-400 mx-2">·</span>
+                        <a href="tel:+919391906311" className="hover:text-blue-600">+91 9391906311</a>
+                      </dd>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                      <dt className="text-gray-500 sm:w-20 flex-shrink-0">Web</dt>
+                      <dd>
+                        <a
+                          href="https://operiumlabs.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:underline"
+                        >
+                          operiumlabs.com
+                        </a>
+                      </dd>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                      <dt className="text-gray-500 sm:w-20 flex-shrink-0">Office</dt>
+                      <dd className="text-gray-700 leading-relaxed">
+                        Prajay Princeton Towers, 1017, 10th floor,<br />
+                        Doctors Colony, Saroornagar,<br />
+                        Hyderabad, Telangana 500035, India
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
-              </section>
-
-              {/* Consent */}
-              <section className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">14. Your Consent</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  By using our Service, you consent to our Privacy Policy and agree to its terms. If you do not agree 
-                  with this policy, please do not use our Service.
-                </p>
-              </section>
-
-            </div>
+              </Section>
+            </article>
           </div>
         </div>
-      </div>
+      </main>
+
       <Footer />
     </div>
   );
 }
 
+function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+  return (
+    <section id={id} className="scroll-mt-24 mb-14 last:mb-0">
+      <h2 className="text-xl md:text-2xl font-bold text-gray-900 tracking-[-0.01em] mb-4">{title}</h2>
+      <div className="space-y-4 text-[15px] text-gray-700 leading-[1.75]">{children}</div>
+    </section>
+  );
+}
+
+function SubHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="!text-sm !font-semibold !text-gray-900 uppercase tracking-wider mt-6 mb-2">
+      {children}
+    </h3>
+  );
+}
+
+function BulletList({ items }: { items: React.ReactNode[] }) {
+  return (
+    <ul className="space-y-2.5 my-3">
+      {items.map((item, i) => (
+        <li key={i} className="flex gap-3 leading-[1.7]">
+          <span className="mt-2.5 w-1 h-1 rounded-full bg-gray-400 flex-shrink-0" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}

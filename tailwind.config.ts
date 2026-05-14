@@ -77,9 +77,14 @@ export default {
 					'dark-secondary': '#161921',
 					'dark-surface': '#1C1F2A',
 				},
-				operium: {
+				'operium-labs': {
 					primary: '#1A56DB',
 					dark: '#0F1117',
+					secondary: '#3B6FE0',
+					accent: '#1648B8',
+					light: '#EBF0FF',
+					muted: '#F8FAFC',
+					neutral: '#64748B'
 				}
 			},
 			borderRadius: {

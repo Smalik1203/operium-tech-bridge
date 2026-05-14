@@ -1,123 +1,112 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { scrollToSection } from "@/utils/scroll";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden noise-bg" aria-label="Hero section">
-      {/* Colorful background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50/50" />
+    <section className="relative pt-24 pb-28 md:pt-32 md:pb-36 overflow-hidden" aria-label="Hero section">
+      {/* Brand-tinted backdrop */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/70 via-white to-indigo-50/40 -z-10" />
+      <div
+        className="absolute inset-0 -z-10 opacity-[0.4]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(15,23,42,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.05) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+          maskImage: 'radial-gradient(ellipse at top, black 35%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at top, black 35%, transparent 75%)',
+        }}
+      />
+      <div className="blob-blue absolute -top-40 -right-40 w-[560px] h-[560px] hidden md:block -z-10" />
+      <div className="blob-indigo absolute -bottom-56 -left-32 w-[460px] h-[460px] hidden md:block -z-10" />
 
-      {/* Decorative elements */}
-      <div className="blob-blue absolute -top-32 -right-32 w-[600px] h-[600px]" />
-      <div className="blob-indigo absolute -bottom-40 -left-40 w-[500px] h-[500px]" />
+      <div className="max-w-5xl mx-auto px-5 md:px-8 text-center md:text-left">
+        {/* Eyebrow */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-100 shadow-sm mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+          <span className="text-xs font-semibold text-gray-700 tracking-wide">Operium Labs · K-12 India</span>
+        </div>
 
-      {/* Floating shapes */}
-      <div className="absolute top-32 right-[15%] w-16 h-16 rounded-2xl bg-blue-500/10 rotate-12 animate-float hidden lg:block" />
-      <div className="absolute bottom-40 left-[10%] w-12 h-12 rounded-full bg-indigo-500/10 animate-float hidden lg:block" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-[40%] right-[8%] w-8 h-8 rounded-lg bg-emerald-500/10 rotate-45 animate-float hidden lg:block" style={{ animationDelay: '4s' }} />
+        {/* Headline */}
+        <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold leading-[1.05] tracking-[-0.025em] text-gray-900 mb-8 max-w-4xl">
+          Smarter solutions for a{' '}
+          <span className="text-blue-600">smarter generation.</span>
+        </h1>
 
-      <div className="max-w-7xl mx-auto px-5 md:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left — Text */}
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-100 shadow-sm mb-8">
-              <Sparkles className="w-3.5 h-3.5 text-blue-500" />
-              <span className="text-xs font-semibold text-blue-600 tracking-wide uppercase">Operium Technologies Pvt Ltd</span>
+        {/* Subhead */}
+        <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0">
+          Software for Indian K-12 schools across three layers — parent communication, day-to-day operations, and the classroom itself.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 justify-center md:justify-start">
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm shadow-blue-600/20 transition-colors"
+          >
+            Talk to us
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </button>
+          <button
+            onClick={() => scrollToSection('products')}
+            className="inline-flex items-center justify-center px-7 py-3.5 text-sm font-semibold text-gray-700 hover:text-gray-900 bg-white border border-gray-200 hover:border-gray-300 rounded-lg transition-all"
+          >
+            See the products
+          </button>
+        </div>
+      </div>
+
+      {/* Three-product strip — separated, breathes below */}
+      <div className="max-w-5xl mx-auto px-5 md:px-8 mt-20 md:mt-28">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+          <a
+            href="https://relayhq.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white p-6 md:p-7 hover:bg-emerald-50/40 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span className="text-[11px] font-semibold text-emerald-700 uppercase tracking-widest">Communication</span>
             </div>
-
-            <h1 className="text-[2.75rem] sm:text-5xl lg:text-[4rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-gray-900 mb-6">
-              Building practical software for <br />
-              <span className="relative inline-block mt-2">
-                <span className="relative z-10 text-blue-600">educational institutions</span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-blue-100/60 -z-0 rounded-sm" />
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-md font-medium">
-              We're a team of developers focused on creating simple, helpful tools that make managing educational institutions a little bit easier every day.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => scrollToSection('about')}
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg shadow-blue-600/20 hover:shadow-blue-700/30 transition-all"
-              >
-                Our Story
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-              <button
-                onClick={() => scrollToSection('solutions')}
-                className="inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-semibold text-gray-700 bg-white border border-gray-200 hover:border-gray-300 hover:shadow-sm rounded-xl transition-all"
-              >
-                What We Build
-              </button>
+            <div className="flex items-baseline justify-between gap-2 mb-1">
+              <p className="text-base font-semibold text-gray-900">Relay</p>
+              <span className="text-[11px] font-medium text-gray-400 group-hover:text-emerald-600 transition-colors">relayhq.in ↗</span>
             </div>
-          </div>
-
-          {/* Right — Abstract Tech Representation */}
-          <div className="hidden lg:flex justify-end pr-8">
-            <div className="relative w-[440px] h-[480px]">
-              {/* Background card (tilted) */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100/80 to-indigo-100/40 rotate-3" />
-
-              {/* Main card */}
-              <div className="absolute inset-4 rounded-[2rem] glass-panel shadow-2xl shadow-blue-900/10 -rotate-2 overflow-hidden flex flex-col">
-                {/* Header bar */}
-                <div className="px-6 py-4 border-b border-gray-50 flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-gray-200" />
-                    <div className="w-3 h-3 rounded-full bg-gray-200" />
-                    <div className="w-3 h-3 rounded-full bg-gray-200" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Active System</span>
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-ring" />
-                  </div>
-                </div>
-
-                <div className="p-8 flex-1 flex flex-col gap-6">
-                  <div className="space-y-2">
-                    <div className="h-2 w-12 bg-blue-600 rounded-full" />
-                    <h3 className="text-xl font-bold text-gray-900">Platform Services</h3>
-                    <p className="text-xs text-gray-400 font-mono">Running smoothly // connected</p>
-                  </div>
-
-                  {/* Abstract data lines */}
-                  <div className="space-y-4 flex-1 mt-4">
-                    {[100, 75, 90, 60].map((width, i) => (
-                      <div key={i} className="flex items-center gap-4">
-                        <div className="w-8 flex-shrink-0 text-[10px] font-mono text-gray-400">0{i + 1}</div>
-                        <div className="flex-1 h-1.5 bg-gray-50 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full rounded-full transition-all duration-1000 ${i === 0 ? 'bg-blue-600' : i === 1 ? 'bg-indigo-500' : 'bg-gray-200'}`}
-                            style={{ width: `${width}%` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* API Mockup */}
-                  <div className="bg-gray-50 rounded-xl p-4 mt-auto border border-gray-100">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="px-1.5 py-0.5 rounded uppercase text-[9px] font-bold bg-emerald-100 text-emerald-700">UPDATE</div>
-                      <span className="text-[10px] font-mono text-gray-500 flex-1 truncate">/records/sync</span>
-                      <span className="text-[10px] font-mono text-gray-400">Done</span>
-                    </div>
-                    <div className="font-mono text-[9px] text-gray-400 leading-relaxed">
-                      {`{
-  "status": "success",
-  "records_updated": 45,
-  "time": "morning"
-}`}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <p className="text-sm text-gray-600 leading-relaxed">Parent updates on WhatsApp — structured, segmented, with read receipts.</p>
+          </a>
+          <a
+            href="https://classbridge.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white p-6 md:p-7 hover:bg-blue-50/40 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <span className="text-[11px] font-semibold text-blue-700 uppercase tracking-widest">Operations</span>
             </div>
-          </div>
-
+            <div className="flex items-baseline justify-between gap-2 mb-1">
+              <p className="text-base font-semibold text-gray-900">ClassBridge</p>
+              <span className="text-[11px] font-medium text-gray-400 group-hover:text-blue-600 transition-colors">classbridge.in ↗</span>
+            </div>
+            <p className="text-sm text-gray-600 leading-relaxed">Attendance, fees, timetables, exams, analytics — one system for the whole school.</p>
+          </a>
+          <a
+            href="https://learnlab.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white p-6 md:p-7 hover:bg-amber-50/40 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+              <span className="text-[11px] font-semibold text-amber-700 uppercase tracking-widest">Learning</span>
+            </div>
+            <div className="flex items-baseline justify-between gap-2 mb-1">
+              <p className="text-base font-semibold text-gray-900">LearnLab</p>
+              <span className="text-[11px] font-medium text-gray-400 group-hover:text-amber-600 transition-colors">learnlab.in ↗</span>
+            </div>
+            <p className="text-sm text-gray-600 leading-relaxed">Interactive science and math simulations built around the syllabus.</p>
+          </a>
         </div>
       </div>
     </section>

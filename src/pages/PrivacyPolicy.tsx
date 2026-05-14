@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
       <div className="flex-grow">
-        <div className="bg-gradient-to-r from-operium-primary to-operium-dark text-white py-16">
+        <div className="bg-gradient-to-r from-operium-labs-primary to-operium-labs-dark text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex justify-center mb-4">
@@ -34,12 +34,12 @@ export default function PrivacyPolicy() {
               {/* Introduction */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <FileText className="h-6 w-6 mr-2 text-operium-primary" />
+                  <FileText className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   1. Introduction
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Operium Technologies Pvt Ltd ("we," "our," or "us") operates mobile applications and web services 
-                  accessible at <strong>operiumtechnologies.in</strong> (collectively, the "Service"). This Privacy Policy 
+                  Operium Labs ("we," "our," or "us") operates mobile applications and web services 
+                  accessible at <strong>operiumlabs.com</strong> (collectively, the "Service"). This Privacy Policy 
                   informs you of our policies regarding the collection, use, and disclosure of personal data when you use 
                   our Service and the choices you have associated with that data.
                 </p>
@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
               {/* Information We Collect */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Eye className="h-6 w-6 mr-2 text-operium-primary" />
+                  <Eye className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   2. Information We Collect
                 </h2>
                 
@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
               {/* How We Use Information */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <UserCheck className="h-6 w-6 mr-2 text-operium-primary" />
+                  <UserCheck className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   3. How We Use Your Information
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -134,7 +134,7 @@ export default function PrivacyPolicy() {
               {/* Data Sharing */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Lock className="h-6 w-6 mr-2 text-operium-primary" />
+                  <Lock className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   4. Data Sharing and Disclosure
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -226,7 +226,7 @@ export default function PrivacyPolicy() {
               {/* Data Security */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Lock className="h-6 w-6 mr-2 text-operium-primary" />
+                  <Lock className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   6. Data Security
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -290,7 +290,7 @@ export default function PrivacyPolicy() {
               {/* Your Rights */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <UserCheck className="h-6 w-6 mr-2 text-operium-primary" />
+                  <UserCheck className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   8. Your Rights and Choices
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -363,10 +363,10 @@ export default function PrivacyPolicy() {
                 </p>
                 <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
                   <li><strong>Supabase:</strong> Cloud database, authentication, and backend infrastructure services. 
-                    <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-operium-primary hover:underline ml-1">View their privacy policy</a></li>
+                    <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-operium-labs-primary hover:underline ml-1">View their privacy policy</a></li>
                   <li><strong>Google Services:</strong> Google Analytics for usage analytics, Google Firebase for push notifications (if applicable), 
                     and Google Sign-In for authentication (if applicable). 
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-operium-primary hover:underline ml-1">View Google's privacy policy</a></li>
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-operium-labs-primary hover:underline ml-1">View Google's privacy policy</a></li>
                   <li><strong>Payment Processors:</strong> Secure payment processing services for subscription and transaction processing. 
                     Payment information is processed directly by these providers and not stored by us.</li>
                   <li><strong>Cloud Storage:</strong> AWS (Amazon Web Services) or similar cloud infrastructure providers for data hosting and storage</li>
@@ -393,7 +393,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">12. Changes to This Privacy Policy</h2>
                 <p className="text-gray-600 leading-relaxed">
                   We may update our Privacy Policy from time to time. We will notify you of any changes by posting the 
-                  new Privacy Policy on this page at <strong>operiumtechnologies.in/privacy-policy</strong> and updating 
+                  new Privacy Policy on this page at <strong>operiumlabs.com/privacy-policy</strong> and updating 
                   the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes. 
                   Changes to this Privacy Policy are effective when they are posted on this page.
                 </p>
@@ -402,24 +402,24 @@ export default function PrivacyPolicy() {
               {/* Contact Us */}
               <section className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Mail className="h-6 w-6 mr-2 text-operium-primary" />
+                  <Mail className="h-6 w-6 mr-2 text-operium-labs-primary" />
                   13. Contact Us
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
                   If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, 
                   please contact us:
                 </p>
-                <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-operium-primary">
-                  <p className="text-gray-800 font-semibold mb-2">Operium Technologies Pvt Ltd</p>
+                <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-operium-labs-primary">
+                  <p className="text-gray-800 font-semibold mb-2">Operium Labs</p>
                   <p className="text-gray-600 mb-1">
-                    <strong>Website:</strong> <a href="https://operiumtechnologies.in" target="_blank" rel="noopener noreferrer" className="text-operium-primary hover:underline">operiumtechnologies.in</a>
+                    <strong>Website:</strong> <a href="https://operiumlabs.com" target="_blank" rel="noopener noreferrer" className="text-operium-labs-primary hover:underline">operiumlabs.com</a>
                   </p>
                   <p className="text-gray-600 mb-1">
-                    <strong>Email:</strong> <a href="mailto:contact@operiumtechnologies.in" className="text-operium-primary hover:underline">contact@operiumtechnologies.in</a>
+                    <strong>Email:</strong> <a href="mailto:contact@operiumlabs.com" className="text-operium-labs-primary hover:underline">contact@operiumlabs.com</a>
                   </p>
                   <p className="text-gray-600 mb-1">
-                    <strong>Phone:</strong> <a href="tel:+919391906310" className="text-operium-primary hover:underline">+91 9391906310</a> / 
-                    <a href="tel:+919391906311" className="text-operium-primary hover:underline"> +91 9391906311</a>
+                    <strong>Phone:</strong> <a href="tel:+919391906310" className="text-operium-labs-primary hover:underline">+91 9391906310</a> / 
+                    <a href="tel:+919391906311" className="text-operium-labs-primary hover:underline"> +91 9391906311</a>
                   </p>
                   <p className="text-gray-600">
                     <strong>Address:</strong><br />

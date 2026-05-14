@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { scrollToSection } from "@/utils/scroll";
 
 const footerLinks = [
-  { label: 'Our Story', action: () => scrollToSection('about') },
-  { label: 'Our Ecosystem', action: () => scrollToSection('solutions') },
-  { label: 'How We Work', action: () => scrollToSection('why-choose') },
-  { label: 'Partner With Us', action: () => scrollToSection('contact') },
+  { label: 'Products', action: () => scrollToSection('products') },
+  { label: 'For publishers', action: () => scrollToSection('publishers') },
+  { label: 'About', action: () => scrollToSection('about') },
+  { label: 'Contact', action: () => scrollToSection('contact') },
 ];
 
 export default function Footer() {
@@ -21,14 +21,14 @@ export default function Footer() {
           <div className="lg:col-span-5 pr-8">
             <Link to="/" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center text-white font-bold text-sm shadow-sm">
-                OT
+                OL
               </div>
               <span className="font-extrabold text-2xl text-gray-900 tracking-tight">
-                Operium<span className="text-blue-600">.</span>
+                Operium Labs<span className="text-blue-600">.</span>
               </span>
             </Link>
-            <p className="text-lg text-gray-500 leading-relaxed md:max-w-sm">
-              Building practical software for educational institutions across India. We focus on clean code and reliable systems so you can focus on education.
+            <p className="text-base text-gray-500 leading-relaxed md:max-w-sm">
+              Three products for Indian K-12 schools — communication, operations, and learning. Built in Hyderabad.
             </p>
           </div>
 
@@ -56,8 +56,8 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Connect</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:contact@operiumtechnologies.in" className="text-base text-gray-600 hover:text-blue-600 transition-colors font-medium break-all">
-                  contact@operiumtechnologies.in
+                <a href="mailto:contact@operiumlabs.com" className="text-base text-gray-600 hover:text-blue-600 transition-colors font-medium break-all">
+                  contact@operiumlabs.com
                 </a>
               </li>
               <li>
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 pt-8">
           <p className="text-sm text-gray-500 font-medium text-center md:text-left">
-            &copy; {currentYear} Operium Technologies Pvt Ltd. All rights reserved.
+            &copy; {currentYear} Operium Labs. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
             <Link to="/privacy-policy" className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">

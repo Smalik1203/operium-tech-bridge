@@ -62,23 +62,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-white scroll-mt-20 relative overflow-hidden" aria-labelledby="contact-heading">
-      <div className="max-w-6xl mx-auto px-5 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="contact" className="border-t border-gray-100 scroll-mt-20" aria-labelledby="contact-heading">
+      <div className="max-w-5xl mx-auto px-5 md:px-8 py-20 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left — Info & CTA */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
-              <span className="text-xs font-semibold text-blue-600 uppercase tracking-widest">Contact Details</span>
-            </div>
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Contact</p>
 
-            <h2 id="contact-heading" className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-[-0.02em] text-gray-900 mb-6">
-              Let's talk about
-              <br />
-              <span className="text-blue-600">your institution</span>
+            <h2 id="contact-heading" className="text-2xl md:text-3xl font-bold leading-tight tracking-[-0.01em] text-gray-900 mb-4">
+              Talk to us.
             </h2>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-10 max-w-md">
-              Have questions or want to learn more about our products? Our team is ready to assist you.
+            <p className="text-base text-gray-600 leading-relaxed mb-10 max-w-md">
+              If you run a school, work in one, or distribute content into one — we'd like to hear from you. Reply by email or use the form; both reach the same inbox.
             </p>
 
             <div className="space-y-8">
@@ -88,8 +84,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:contact@operiumtechnologies.in" className="text-base text-gray-600 hover:text-blue-600 transition-colors">
-                    contact@operiumtechnologies.in
+                  <a href="mailto:contact@operiumlabs.com" className="text-base text-gray-600 hover:text-blue-600 transition-colors">
+                    contact@operiumlabs.com
                   </a>
                 </div>
               </div>
@@ -127,12 +123,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right — Clean Modern Form */}
-          <div className="bg-white rounded-[2rem] border border-gray-100 p-8 shadow-2xl shadow-blue-900/5 relative">
-            {/* Form decorative accent */}
-            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-t-[2rem]" />
-
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+          {/* Right — Form */}
+          <div className="bg-white rounded-xl border border-gray-200 p-7">
+            <h3 className="text-base font-semibold text-gray-900 mb-6">Send a message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

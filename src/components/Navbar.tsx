@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 import { scrollToSection } from "@/utils/scroll";
 
 const navLinks = [
+  { label: 'Products', section: 'products' },
   { label: 'About', section: 'about' },
-  { label: 'Products', section: 'solutions' },
-  { label: 'Why Us', section: 'why-choose' },
   { label: 'Contact', section: 'contact' },
 ];
 
@@ -38,22 +37,17 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <div className="flex justify-between items-center h-16 md:h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5">
+          <Link to="/" className="flex items-center">
             <img
-              src="/operium-logo.png"
-              alt="Operium Technologies"
-              className="h-7 md:h-8 w-auto object-contain"
-              width="96"
-              height="32"
+              src="/logo.png"
+              alt="Operium Labs"
+              className="h-8 md:h-10 w-auto object-contain"
               loading="eager"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = '/operium-logo.svg';
               }}
             />
-            <span className="font-semibold text-[15px] md:text-base text-gray-900 tracking-tight">
-              Operium<span className="text-brand-blue">Technologies</span>
-            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -71,7 +65,7 @@ export default function Navbar() {
               onClick={() => handleScrollTo('contact')}
               className="ml-3 px-5 py-2 text-[13px] font-semibold text-white bg-brand-blue hover:bg-brand-blue-hover rounded-lg transition-colors"
             >
-              Partner With Us
+              Talk to us
             </button>
           </div>
 
@@ -113,7 +107,7 @@ export default function Navbar() {
                 onClick={() => handleScrollTo('contact')}
                 className="mt-3 mb-2 w-full py-2.5 text-[14px] font-semibold text-white bg-brand-blue rounded-lg"
               >
-                Partner With Us
+                Talk to us
               </button>
             </div>
           </motion.div>

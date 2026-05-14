@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Operium Labs">
+  <title>Operium Labs</title>
+  <!-- Rounded square background -->
+  <rect width="64" height="64" rx="14" fill="#FFFFFF"/>
+
+  <!-- Triad of overlapping rounded forms, abstract reference to three products converging.
+       Drawn as three blade/petal shapes rotating around the centre at 0°, 120°, 240°. -->
+  <g fill="#0B1B2B" fill-rule="evenodd" transform="translate(32 32)">
+    <!-- Blade 1 (top) -->
+    <path d="M 0 -20
+             C 6 -20 11 -16 12 -10
+             L 0 0
+             L -12 -10
+             C -11 -16 -6 -20 0 -20 Z"/>
+    <!-- Blade 2 (bottom-right) — rotated 120° -->
+    <path d="M 0 -20
+             C 6 -20 11 -16 12 -10
+             L 0 0
+             L -12 -10
+             C -11 -16 -6 -20 0 -20 Z"
+          transform="rotate(120)"/>
+    <!-- Blade 3 (bottom-left) — rotated 240° -->
+    <path d="M 0 -20
+             C 6 -20 11 -16 12 -10
+             L 0 0
+             L -12 -10
+             C -11 -16 -6 -20 0 -20 Z"
+          transform="rotate(240)"/>
+
+    <!-- Central node, slightly smaller, in brand blue to subtly tie to the rest of the site -->
+    <circle r="3.5" fill="#1A56DB"/>
+  </g>
+</svg>

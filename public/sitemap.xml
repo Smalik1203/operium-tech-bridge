@@ -3,48 +3,48 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://operiumtechnologies.in/</loc>
+    <loc>https://operiumlabs.com/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://operiumtechnologies.in/lovable-uploads/d084ed39-b5b6-4949-b407-5c4d38ad9141.png</image:loc>
-      <image:title>Operium Technologies - Leading EdTech Solutions</image:title>
-      <image:caption>Educational Technology Solutions by Operium Technologies</image:caption>
+      <image:loc>https://operiumlabs.com/lovable-uploads/d084ed39-b5b6-4949-b407-5c4d38ad9141.png</image:loc>
+      <image:title>Operium Labs - Leading EdTech Solutions</image:title>
+      <image:caption>Educational Technology Solutions by Operium Labs</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://operiumtechnologies.in/#about</loc>
+    <loc>https://operiumlabs.com/#about</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operiumtechnologies.in/#solutions</loc>
+    <loc>https://operiumlabs.com/#solutions</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://operiumtechnologies.in/#classbridge</loc>
+    <loc>https://operiumlabs.com/#classbridge</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://operiumtechnologies.in/#why-choose</loc>
+    <loc>https://operiumlabs.com/#why-choose</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://operiumtechnologies.in/#contact</loc>
+    <loc>https://operiumlabs.com/#contact</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operiumtechnologies.in/privacy-policy</loc>
+    <loc>https://operiumlabs.com/privacy-policy</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

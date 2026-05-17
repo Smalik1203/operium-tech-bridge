@@ -73,13 +73,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Office - Spans 2 cols */}
+          {/* Based in - Spans 2 cols */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Office</h4>
+            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Based in</h4>
             <address className="not-italic text-base text-gray-600 leading-relaxed">
-              Prajay Princeton Towers, 1017,<br />
-              10th floor, Saroornagar,<br />
-              Hyderabad, Telangana 500035
+              Hyderabad, India
             </address>
           </div>
 

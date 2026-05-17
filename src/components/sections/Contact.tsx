@@ -112,11 +112,9 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-indigo-600" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900 mb-1">Visit Us</h4>
+                  <h4 className="text-sm font-bold text-gray-900 mb-1">Based in</h4>
                   <address className="not-italic text-base text-gray-600 leading-relaxed">
-                    Prajay Princeton Towers, 1017, 10th floor,<br />
-                    Doctors Colony, Saroornagar,<br />
-                    Hyderabad, Telangana 500035
+                    Hyderabad, India
                   </address>
                 </div>
               </div>

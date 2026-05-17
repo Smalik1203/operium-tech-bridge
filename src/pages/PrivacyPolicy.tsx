@@ -269,11 +269,9 @@ export default function PrivacyPolicy() {
                       </dd>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
-                      <dt className="text-gray-500 sm:w-20 flex-shrink-0">Office</dt>
+                      <dt className="text-gray-500 sm:w-20 flex-shrink-0">Based in</dt>
                       <dd className="text-gray-700 leading-relaxed">
-                        Prajay Princeton Towers, 1017, 10th floor,<br />
-                        Doctors Colony, Saroornagar,<br />
-                        Hyderabad, Telangana 500035, India
+                        Hyderabad, India
                       </dd>
                     </div>
                   </dl>

@@ -7,7 +7,7 @@ const todayRows = [
   },
   {
     label: 'Operations',
-    today: 'Four vendors stitched together — attendance app, fee software, exam tool, report card maker. None of them talk.',
+    today: 'Four separate vendors: an attendance app, fee software, an exam tool, a report-card maker. None of them talk to each other.',
   },
   {
     label: 'The classroom',
@@ -32,19 +32,26 @@ const withUsRows = [
 
 export default function Context() {
   return (
-    <section className="py-20 md:py-24 border-t border-gray-100" aria-label="What we replace">
+    <section className="py-20 md:py-24 border-t border-gray-100 bg-white/40" aria-label="The gap we close">
       <div className="max-w-6xl mx-auto px-5 md:px-8">
+        <div className="max-w-2xl mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-[-0.01em] text-gray-900 mb-4 text-balance">
+            Schools have changed. Most of their software hasn't.
+          </h2>
+          <p className="text-base text-gray-600 leading-relaxed">
+            Parents live on WhatsApp, fees move on UPI, and yet the day-to-day still runs on registers and disconnected apps. Here's the gap we close.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Today */}
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-widest">How most schools run today</span>
-            </div>
+            <p className="text-sm font-semibold text-gray-900 mb-6">How most schools run today</p>
             <ul className="space-y-5">
               {todayRows.map((r) => (
                 <li key={r.label}>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">{r.label}</p>
-                  <p className="text-sm text-gray-700 leading-relaxed">{r.today}</p>
+                  <p className="text-sm font-semibold text-gray-700 mb-1">{r.label}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{r.today}</p>
                 </li>
               ))}
             </ul>
@@ -52,15 +59,12 @@ export default function Context() {
 
           {/* With us */}
           <div className="bg-white border border-blue-100 rounded-2xl p-7 md:p-9 shadow-sm shadow-blue-900/[0.03]">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span className="text-[11px] font-semibold text-blue-700 uppercase tracking-widest">What we change</span>
-            </div>
+            <p className="text-sm font-semibold text-blue-700 mb-6">How they run with us</p>
             <ul className="space-y-5">
               {withUsRows.map((r) => (
                 <li key={r.label}>
-                  <p className="text-xs font-semibold text-blue-700 uppercase tracking-wider mb-1.5">{r.label}</p>
-                  <p className="text-sm text-gray-800 leading-relaxed">{r.us}</p>
+                  <p className="text-sm font-semibold text-gray-900 mb-1">{r.label}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{r.us}</p>
                 </li>
               ))}
             </ul>

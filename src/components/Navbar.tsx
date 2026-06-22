@@ -27,9 +27,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/70 backdrop-blur-xl border-b border-gray-100'
-        : 'bg-transparent'
+      className={`sticky top-0 z-50 bg-white transition-all duration-300 ${scrolled
+        ? 'border-b border-gray-100 shadow-sm'
+        : 'border-b border-transparent'
         }`}
       role="navigation"
       aria-label="Main navigation"

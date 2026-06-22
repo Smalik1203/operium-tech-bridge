@@ -27,7 +27,7 @@ export default function About() {
 
           {/* Side panel — plain facts, no second product list */}
           <aside className="lg:col-span-5">
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-7 lg:sticky lg:top-28">
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-7 lg:sticky lg:top-28 lg:mt-12">
               <dl className="divide-y divide-gray-200">
                 <div className="flex items-baseline justify-between gap-4 pb-4">
                   <dt className="text-sm text-gray-500">Based in</dt>
@@ -37,18 +37,14 @@ export default function About() {
                   <dt className="text-sm text-gray-500">Built for</dt>
                   <dd className="text-sm font-medium text-gray-900">K-12 schools</dd>
                 </div>
-                <div className="flex items-baseline justify-between gap-4 py-4">
+                <div className="flex items-baseline justify-between gap-4 pt-4">
                   <dt className="text-sm text-gray-500">Products</dt>
                   <dd className="text-sm font-medium text-gray-900">ClassBridge, LearnLab, Relay</dd>
-                </div>
-                <div className="flex items-baseline justify-between gap-4 pt-4">
-                  <dt className="text-sm text-gray-500">Sold</dt>
-                  <dd className="text-sm font-medium text-gray-900">Direct, and via publishers</dd>
                 </div>
               </dl>
 
               <p className="mt-6 pt-6 border-t border-gray-200 text-sm text-gray-600 leading-relaxed">
-                If you run a school, teach in one, or publish for one, we'd like to hear from you.
+                If you run a school or teach in one, we'd like to hear from you.
               </p>
             </div>
           </aside>

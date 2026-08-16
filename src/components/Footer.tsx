@@ -32,14 +32,42 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-5 pr-8">
-            <Link to="/" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center gap-3 mb-6">
+            <Link
+              to="/"
+              onClick={() => window.scrollTo(0, 0)}
+              aria-label="Operium Labs — home"
+              className="inline-flex items-center gap-4 mb-6"
+            >
               <img
-                src="/operium-icon.png"
+                src="/logo.png"
                 alt=""
-                className="w-10 h-10 rounded-full object-contain"
+                className="w-10 h-10 object-contain"
               />
-              <span className="font-extrabold text-2xl text-white tracking-tight">
-                Operium Labs<span className="text-blue-400">.</span>
+              {/* Wordmark lockup. Proportions measured off the supplied art:
+                  LABS sits at 0.69x the cap height and spans 95.6% of OPERIUM.
+                  The negative right margin cancels the trailing space that
+                  letter-spacing adds after OPERIUM's final glyph, so the row box
+                  equals its true glyph width — which LABS then measures against.
+                  LABS is distributed edge-to-edge rather than letter-spaced, so
+                  it hits that width exactly instead of depending on font metrics. */}
+              <span className="flex flex-col leading-none" aria-hidden="true">
+                <span
+                  className="font-display text-base md:text-lg font-medium text-white"
+                  // lineHeight inline: Tailwind's text-lg/text-xl bundle their own
+                  // line-height, and the md: variant is emitted after leading-none,
+                  // so a utility class loses here.
+                  style={{ letterSpacing: '0.28em', marginRight: '-0.28em', lineHeight: 1 }}
+                >
+                  OPERIUM
+                </span>
+                <span
+                  className="flex justify-between self-center w-[95.6%] mt-[0.34em] font-display text-[11px] md:text-[12.4px] font-medium"
+                  style={{ color: '#0053C5' }}
+                >
+                  {['L', 'A', 'B', 'S'].map((c) => (
+                    <span key={c}>{c}</span>
+                  ))}
+                </span>
               </span>
             </Link>
             <p className="text-base text-gray-400 leading-relaxed md:max-w-sm">

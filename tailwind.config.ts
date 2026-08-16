@@ -22,6 +22,9 @@ export default {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 				'sans': ['Inter', 'sans-serif'],
+				// Wordmark face. Open-licensed stand-in for MADE Future X, which is
+				// personal-use only and cannot ship on a commercial site.
+				'display': ['Space Grotesk', 'Inter', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

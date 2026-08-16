@@ -33,9 +33,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-5 pr-8">
             <Link to="/" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-gray-900 font-bold text-sm">
-                OL
-              </div>
+              <img
+                src="/operium-icon.png"
+                alt=""
+                className="w-10 h-10 rounded-xl bg-white object-contain"
+              />
               <span className="font-extrabold text-2xl text-white tracking-tight">
                 Operium Labs<span className="text-blue-400">.</span>
               </span>

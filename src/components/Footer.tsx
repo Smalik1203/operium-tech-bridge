@@ -36,7 +36,7 @@ export default function Footer() {
               <img
                 src="/operium-icon.png"
                 alt=""
-                className="w-10 h-10 rounded-xl bg-white object-contain"
+                className="w-10 h-10 rounded-full object-contain"
               />
               <span className="font-extrabold text-2xl text-white tracking-tight">
                 Operium Labs<span className="text-blue-400">.</span>

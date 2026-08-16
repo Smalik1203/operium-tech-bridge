@@ -25,6 +25,22 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Modifier-clicks are the user opening the link elsewhere — leave them alone.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    // Browsers restore the previous scroll position across a reload by default,
+    // which would land the user back where they were instead of at the top.
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.location.assign('/');
+  };
+
   return (
     <nav
       className={`sticky top-0 z-50 bg-white transition-all duration-300 ${scrolled
@@ -37,11 +53,11 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         <div className="flex justify-between items-center h-16 md:h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center md:flex-1" onClick={handleLogoClick}>
             <img
               src="/logo.png"
               alt="Operium Labs"
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-7 md:h-9 w-auto object-contain"
               loading="eager"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -50,20 +66,24 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop nav */}
+          {/* Desktop nav — centred between the logo and the CTA */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.section}
                 onClick={() => handleScrollTo(link.section)}
-                className="px-3.5 py-2 text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
+                className="px-3.5 py-2 text-[14px] font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
               >
                 {link.label}
               </button>
             ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex md:flex-1 justify-end">
             <button
               onClick={() => handleScrollTo('contact')}
-              className="ml-3 px-5 py-2 text-[13px] font-semibold text-white bg-brand-blue hover:bg-brand-blue-hover rounded-lg transition-colors"
+              className="px-5 py-2 text-[13px] font-semibold text-white bg-brand-blue hover:bg-brand-blue-hover rounded-lg transition-colors"
             >
               Talk to us
             </button>
